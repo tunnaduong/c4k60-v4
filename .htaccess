@@ -2,3 +2,7 @@ php_value upload_max_filesize 500M
 php_value post_max_size 500M
 Options -Indexes
 ErrorDocument 404 /404.php
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+php_flag  log_errors on

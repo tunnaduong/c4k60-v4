@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>My First JavaScript</h2>
+
+    <button type="button" id="giday">Bấm đây để đẹp trai</button>
+
+    <p id="demo">Tùng Anh đang học mẫu giáo, chuẩn bị vào lớp 1</p>
+    <script>
+      var tunganh = 0;
+      var message = "Vãi lồn thế anh ơi em đéo học đại học đâu :((((";
+      var temp = 0;
+
+      function chayCaiLenhNay() {
+        tunganh++;
+        document.getElementById("demo").innerHTML =
+          "Tùng Anh đang học lớp: " + tunganh + "C4";
+        if (tunganh == 12) {
+          document
+            .getElementById("giday")
+            .removeEventListener("click", chayCaiLenhNay);
+          document
+            .getElementById("giday")
+            .addEventListener("click", dungChayCaiNay);
+        }
+      }
+
+      function dungChayCaiNay() {
+        if (temp == 2) {
+          alert("địt cả họ nhà anh :)");
+          temp = 2;
+        } else {
+          alert(message);
+          message = "Em bảo lần cuối đấy :(((";
+          temp++;
+        }
+      }
+
+      document
+        .getElementById("giday")
+        .addEventListener("click", chayCaiLenhNay);
+    </script>
+  </body>
+</html>
+<!-- từ trang web > chọn element có id bằng giday > thêm một cái lắng nghe sự kiện (tên sự kiện: "click", thực hiện lệnh: => { 
+	từ trang web > chọn element có id bằng demo > nội dung bên trong thẻ = 'abc'
+});
+!-->
