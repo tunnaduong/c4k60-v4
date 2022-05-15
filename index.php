@@ -1,16 +1,4 @@
-<?php
-$string = $_SERVER['REQUEST_URI'];
-if (substr($string, -1) == "/") {
-    $string = substr($string, 0, -1);
-}
-$find = 'index.php';
-$replace = '';
-$result = preg_replace(strrev("/$find/"), strrev($replace), strrev($string), 1);
-
-if (!apache_request_headers()["ajax_call"] == "true") {
-    header("Location: " . strrev($result));
-}
-?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . "/requires/prevent_direct_access.php") ?>
 <div id="root">
     <div id="homeSlideshow" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -104,7 +92,7 @@ if (!apache_request_headers()["ajax_call"] == "true") {
             </div>
             <div class="shortcuts--button-title">Sinh nhật sắp tới</div>
         </div>
-        <div class="shortcuts--button grid-item" goto="/profile.php">
+        <div class="shortcuts--button grid-item" goto="/profile">
             <div class="shortcuts--button-icon btn-profile">
                 <ion-icon name="people"></ion-icon>
             </div>
