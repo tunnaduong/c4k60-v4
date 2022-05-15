@@ -34,6 +34,7 @@ body {
 .menu--logo {
   width: 90px;
   justify-content: start;
+  cursor: pointer;
 }
 
 .menu--search {
@@ -64,6 +65,7 @@ body {
   padding: 15px 15px 0 15px;
   overflow-y: auto;
   overflow-x: hidden;
+  padding-bottom: 60px;
 }
 
 #root::-webkit-scrollbar {
@@ -192,7 +194,7 @@ body {
 .user-greeting {
   height: 90px;
   background-color: white;
-  margin-top: 28px;
+  margin-top: 28px !important;
   margin-left: -15px;
   padding: 15px;
   display: flex !important;
@@ -240,6 +242,7 @@ body {
 
 .root-element {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  margin-top: 0.9rem;
 }
 
 .shortcuts {
@@ -263,7 +266,7 @@ body {
 .grid-item:nth-child(1),
 .grid-item:nth-child(2),
 .grid-item:nth-child(3) {
-  padding: 20px 0 10px;
+  padding: 20px 0 5px;
 }
 
 .grid-item:nth-child(4),
@@ -330,4 +333,62 @@ body {
 .shortcuts--button-title {
   font-size: 12.5px;
   margin-top: 10px;
+}
+
+.site-navbar {
+  position: fixed;
+  margin: 0 auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  max-width: 600px;
+  background-color: white;
+  border-top: 0.5px solid #c4c4c4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.site-navbar--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #b5b5b5;
+  width: 100%;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: all 200ms;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-size: 1px 500px;
+  background-position: 50% 100%;
+  user-select: none;
+}
+
+.site-navbar--item-title {
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+.site-navbar .active {
+  color: #3478f6;
+}
+
+.site-navbar--item > ion-icon {
+  font-size: 26px;
+  margin: 3px 0;
+}
+
+.site-navbar--item:hover {
+  background-size: 1px 60px;
+  background-position: 0px;
+}
+
+.site-navbar--item:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#nprogress .bar {
+  background: #000000 !important;
+  height: 3.5px !important;
 }

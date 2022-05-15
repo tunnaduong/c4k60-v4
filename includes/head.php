@@ -42,6 +42,9 @@
     <!-- Bộ mã Waves -->
     <script src="/assets/waves/waves.min.js"></script>
     <link href="/assets/waves/waves.min.css" rel="stylesheet">
+    <!-- Bộ mã NProgress -->
+    <script src='/assets/nprogress/nprogress.js'></script>
+    <link rel='stylesheet' href='/assets/nprogress/nprogress.css' />
     <!-- Tiêu đề trang web -->
     <title><?= $title ?></title>
 </head>

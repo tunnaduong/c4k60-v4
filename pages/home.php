@@ -66,7 +66,7 @@
             <span class="visually-hidden">Tiếp</span>
         </button>
     </div>
-    <div class="full-width user-greeting root-element" goto="/index.php">
+    <div class="full-width user-greeting root-element" goto="/">
         <div class="user-greeting--avatar-wrapper">
             <img src="/assets/images/user.png" class="user-greeting--avatar" alt="Unloggedin User Avatar">
         </div>
@@ -79,37 +79,37 @@
         </div>
     </div>
     <div class="shortcuts full-width root-element grid-container">
-        <div class="shortcuts--button grid-item" goto="/photos">
+        <div class="shortcuts--button grid-item" onclick="go('/photos')">
             <div class="shortcuts--button-icon btn-photos">
                 <ion-icon name="images"></ion-icon>
             </div>
             <div class="shortcuts--button-title">Thư viện ảnh</div>
         </div>
-        <div class="shortcuts--button grid-item" goto="/birthdays">
+        <div class="shortcuts--button grid-item" onclick="go('/birthdays')">
             <div class="shortcuts--button-icon btn-birthdays">
                 <ion-icon name="gift"></ion-icon>
             </div>
             <div class="shortcuts--button-title">Sinh nhật sắp tới</div>
         </div>
-        <div class="shortcuts--button grid-item" goto="/profile.php">
+        <div class="shortcuts--button grid-item" onclick="go('/profile.php')">
             <div class="shortcuts--button-icon btn-profile">
                 <ion-icon name="people"></ion-icon>
             </div>
             <div class="shortcuts--button-title">Hồ sơ thành viên</div>
         </div>
-        <div class="shortcuts--button grid-item" goto="/friends-near-me">
+        <div class="shortcuts--button grid-item" onclick="go('/friends-near-me')">
             <div class="shortcuts--button-icon btn-near-here">
                 <ion-icon name="location"></ion-icon>
             </div>
             <div class="shortcuts--button-title">Bạn bè gần đây</div>
         </div>
-        <div class="shortcuts--button grid-item" goto="/listen-together">
+        <div class="shortcuts--button grid-item" onclick="go('/listen-together')">
             <div class="shortcuts--button-icon btn-listen">
                 <ion-icon name="musical-notes"></ion-icon>
             </div>
             <div class="shortcuts--button-title">Nghe nhạc cùng nhau</div>
         </div>
-        <div class="shortcuts--button grid-item" goto="/calendar">
+        <div class="shortcuts--button grid-item" onclick="go('/calendar')">
             <div class="shortcuts--button-icon btn-calendar">
                 <ion-icon name="calendar-number"></ion-icon>
             </div>
@@ -117,9 +117,3 @@
         </div>
     </div>
 </div>
-<script>
-Waves.attach(".user-greeting");
-Waves.attach(".menu--search");
-Waves.attach(".shortcuts--button");
-Waves.init();
-</script>
