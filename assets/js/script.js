@@ -22,6 +22,9 @@ $("html").on("click", "[goto]", function (e) {
   setTimeout(() => {
     $.ajax({
       url: url + "?t=n",
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("ajax_call", "true");
+      },
       error: function (jqXHR, textStatus, errorThrown) {
         $body.load("/error_handle.php", function () {
           $("#error-code").html(jqXHR.status);
@@ -53,6 +56,9 @@ if (!window.location.pathname.indexOf(".php") != -1) {
 }
 $.ajax({
   url: url + "?t=n",
+  beforeSend: function (xhr) {
+    xhr.setRequestHeader("ajax_call", "true");
+  },
   error: function (jqXHR, textStatus, errorThrown) {
     $body.load("/error_handle.php", function () {
       $("#error-code").html(jqXHR.status);
