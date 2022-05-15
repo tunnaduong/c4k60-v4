@@ -12,6 +12,8 @@ if (!$_GET['t'] == "n") {
 <?php
 } else {
 ?>
-<div id="screen"></div>
+<div id="screen">
+    <?php require $_SERVER['DOCUMENT_ROOT'] . "/error_handle.php" ?>
+</div>
 <?php
 }

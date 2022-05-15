@@ -25,17 +25,6 @@ $("html").on("click", "[goto]", function (e) {
       beforeSend: function (xhr) {
         xhr.setRequestHeader("ajax_call", "true");
       },
-      error: function (jqXHR, textStatus, errorThrown) {
-        $body.load("/error_handle.php", function () {
-          $("#error-code").html(jqXHR.status);
-          if (errorThrown == "Not Found") var err = "Page Not Found";
-          else var err = errorThrown;
-          $("#error-detail").html(err);
-        });
-        console.log(jqXHR);
-        console.log(textStatus);
-        console.log(errorThrown);
-      },
       success: function (data) {
         $("#screen").html(data);
       },
@@ -71,3 +60,28 @@ $.ajax({
     $("#screen").html(data);
   },
 });
+
+window.onpopstate = function (event) {
+  if (!window.location.pathname.indexOf(".php") != -1) {
+    var url = window.location.pathname + "index.php";
+  } else {
+    var url = window.location.pathname;
+  }
+  $.ajax({
+    url: url + "?t=n",
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader("ajax_call", "true");
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      $body.load("/error_handle.php", function () {
+        $("#error-code").html(jqXHR.status);
+        if (errorThrown == "Not Found") var err = "Page Not Found";
+        else var err = errorThrown;
+        $("#error-detail").html(err);
+      });
+    },
+    success: function (data) {
+      $("#screen").html(data);
+    },
+  });
+};
