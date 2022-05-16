@@ -347,6 +347,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .site-navbar--item {
@@ -391,4 +394,16 @@ body {
 #nprogress .bar {
   background: #000000 !important;
   height: 3.5px !important;
+}
+
+.site-navbar--white-bg {
+  width: 110%;
+  height: 60px;
+  background-color: white;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+main {
+  padding-bottom: 60px !important;
+  height: 100% !important;
 }
