@@ -33,14 +33,20 @@ body {
 
 .menu--logo {
   width: 90px;
-  justify-content: start;
   cursor: pointer;
+}
+
+.menu--logo-mobile {
+  width: 120px;
+  cursor: pointer;
+  display: none;
 }
 
 .menu--search {
   width: 45px;
   height: 45px;
   border-radius: 50px;
+  perspective: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,11 +67,12 @@ body {
   left: 0;
   background-color: #ededed;
   border-radius: 35px 35px 0 0;
+  perspective: 1px;
   box-shadow: 0px 4px 26px 3px rgba(0, 0, 0, 0.25);
   padding: 15px 15px 0 15px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 60px;
+  padding-bottom: calc(60px + 0.9rem);
 }
 
 #root::-webkit-scrollbar {
@@ -73,7 +80,8 @@ body {
 }
 
 .curve {
-  border-radius: 20px;
+  border-radius: 20px !important;
+  perspective: 1px;
 }
 
 #slideshow--1 {
@@ -136,12 +144,13 @@ body {
 
 .carousel-indicators {
   margin-bottom: -1.2rem !important;
+  z-index: 0 !important;
 }
 
 .carousel-caption {
-  right: 4% !important;
+  right: 2.6% !important;
   bottom: -0.15rem !important;
-  left: 4% !important;
+  left: 2.6% !important;
   text-align: left !important;
   color: white !important;
 }
@@ -164,6 +173,7 @@ body {
   opacity: 0.5;
   transition: opacity 0.6s ease;
   border-radius: 50px !important;
+  perspective: 1px;
 }
 
 .carousel-indicators > [class="active"] {
@@ -205,6 +215,7 @@ body {
 
 .user-greeting--avatar {
   border-radius: 50%;
+  perspective: 1px;
   height: 50px;
 }
 
@@ -245,7 +256,8 @@ body {
   margin-top: 0.9rem;
 }
 
-.shortcuts {
+.shortcuts,
+.default-panel {
   margin-left: -15px;
   background-color: white;
   max-height: 220px;
@@ -279,6 +291,7 @@ body {
   width: 60px;
   height: 63px;
   border-radius: 25px;
+  perspective: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,7 +416,124 @@ body {
   margin-right: -15px;
   margin-left: -15px;
 }
+
 main {
   padding-bottom: 60px !important;
   height: 100% !important;
+}
+
+.p15 {
+  padding: 15px;
+}
+
+.default-panel--title {
+  font-size: larger;
+  font-weight: 600;
+}
+
+.q-noti {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-line {
+  width: 2px;
+  height: calc(100% - 30px);
+  background-color: #737373;
+  margin: auto 0;
+}
+
+.q-noti--timeline {
+  display: flex;
+  flex-direction: row;
+}
+
+.q-noti--timeline > ul {
+  list-style: none;
+  margin-left: 11.3px;
+}
+
+ul > li:before {
+  content: "•";
+  color: #737373;
+  position: absolute;
+  font-size: larger;
+  transform: translateX(-17.5px) translateY(-3px);
+}
+
+.q-noti--timeline > ul > li::marker {
+  font-size: larger;
+  color: #737373;
+  margin-left: 11.3px;
+}
+
+.q-noti--timeline > ul > li > div {
+  display: flex;
+  align-items: center;
+}
+
+.timeline--date {
+  font-size: 13px;
+  color: #737373;
+  width: 77px;
+}
+
+.timeline--noti-title {
+  font-size: 100%;
+}
+
+.link {
+  color: #137fe3;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media only screen and (max-width: 768px) {
+  .carousel-caption {
+    zoom: 0.8;
+  }
+
+  #slideshow--1,
+  #slideshow--2,
+  #slideshow--3,
+  #slideshow--4,
+  #slideshow--5 {
+    height: 180px;
+  }
+
+  .user-greeting--greeting,
+  .shortcuts--button-title,
+  .default-panel--title,
+  .timeline--date,
+  .timeline--noti-title {
+    zoom: 0.87;
+  }
+
+  .vertical-line {
+    height: calc(100% - 25px);
+  }
+
+  ul > li:before {
+    transform: translateX(-17.5px) translateY(-6px);
+  }
+
+  .menu--logo {
+    display: none;
+  }
+
+  .menu--logo-mobile {
+    display: block;
+    transform: translateY(-19px) translateX(5px);
+  }
+
+  .menu--search {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    transform: translateY(-20px);
+  }
 }

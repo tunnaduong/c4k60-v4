@@ -1,4 +1,11 @@
 $body = $("#screen");
+function initWaves() {
+  Waves.attach(".user-greeting");
+  Waves.attach(".menu--search");
+  Waves.attach(".shortcuts--button");
+  Waves.init();
+  // $("[goto]").blur();
+}
 NProgress.configure({ showSpinner: false });
 $(document).on({
   ajaxStart: function () {
@@ -11,6 +18,7 @@ $(document).on({
 NProgress.start();
 $(document).ready(function () {
   NProgress.done();
+  initWaves();
 });
 
 $("html").on("click", "[goto]", function (e) {
@@ -27,6 +35,7 @@ $("html").on("click", "[goto]", function (e) {
       },
       success: function (data) {
         $("#screen").html(data);
+        initWaves();
       },
     });
   }, 200);
@@ -58,6 +67,7 @@ $.ajax({
   },
   success: function (data) {
     $("#screen").html(data);
+    initWaves();
   },
 });
 
@@ -82,6 +92,7 @@ window.onpopstate = function (event) {
     },
     success: function (data) {
       $("#screen").html(data);
+      initWaves();
     },
   });
 };
