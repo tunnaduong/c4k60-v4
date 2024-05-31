@@ -1,5 +1,5 @@
 <nav class="site-navbar">
-    <div class="site-navbar--item active" goto="/index.php">
+    <div class="site-navbar--item active" goto="/">
         <ion-icon name="home"></ion-icon>
         <span class="site-navbar--item-title">Trang chủ</span>
     </div>

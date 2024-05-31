@@ -1,0 +1,19 @@
+{
+    "name": "tunnaduong/c4k60-v4",
+    "description": "Website for my high school class. Version 4.0",
+    "type": "project",
+    "require": {
+        "phroute/phroute": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tunnaduong\\C4k60V4\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Duong Tung Anh",
+            "email": "tunnaduong@gmail.com"
+        }
+    ]
+}
