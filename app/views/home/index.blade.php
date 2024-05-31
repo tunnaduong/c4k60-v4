@@ -81,18 +81,33 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/menu.php';
                 <span class="visually-hidden">Tiếp</span>
             </button>
         </div>
-        <div class="full-width user-greeting root-element" goto="/login">
-            <div class="user-greeting--avatar-wrapper">
-                <img src="/assets/images/user.png" class="user-greeting--avatar" alt="Unloggedin User Avatar">
+        @if (isset($_SESSION['user']))
+            <div class="full-width user-greeting root-element" goto="/profile">
+                <div class="user-greeting--avatar-wrapper">
+                    <img src="/assets/images/user.png" class="user-greeting--avatar" alt="Loggedin User Avatar">
+                </div>
+                <div class="user-greeting--greeting">
+                    <h5>Chào mừng, {{ $_SESSION['user']->name }}!</h5>
+                    <p>Chúc bạn một ngày tốt lành và tràn đầy năng lượng.</p>
+                </div>
+                <div class="user-greeting--icon-wrapper">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
             </div>
-            <div class="user-greeting--greeting">
-                <h5>Bạn chưa đăng nhập!</h5>
-                <p>Hãy đăng nhập để trải nghiệm đầy đủ các tính năng tuyệt vời của trang web.</p>
+        @else
+            <div class="full-width user-greeting root-element" goto="/login">
+                <div class="user-greeting--avatar-wrapper">
+                    <img src="/assets/images/user.png" class="user-greeting--avatar" alt="Unloggedin User Avatar">
+                </div>
+                <div class="user-greeting--greeting">
+                    <h5>Bạn chưa đăng nhập!</h5>
+                    <p>Hãy đăng nhập để trải nghiệm đầy đủ các tính năng tuyệt vời của trang web.</p>
+                </div>
+                <div class="user-greeting--icon-wrapper">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
             </div>
-            <div class="user-greeting--icon-wrapper">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-            </div>
-        </div>
+        @endif
         <div class="shortcuts full-width root-element grid-container">
             <div class="shortcuts--button grid-item" goto="/photos">
                 <div class="shortcuts--button-icon btn-photos">
