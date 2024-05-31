@@ -1,6 +1,4 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/requires/credits.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/requires/serverconnect.php";
 $title = 'C4K60';
 include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/includes/menu.php";

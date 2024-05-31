@@ -16,11 +16,16 @@ class HomeController extends BaseController
     public function index()
     {
         $notifications = $this->home->getNotifications();
-        return $this->render("home.index", compact("notifications"));
+        return $this->render("pages.home.index", compact("notifications"));
     }
 
     public function menu()
     {
-        return $this->render("menu.index");
+        return $this->render("pages.menu.index");
+    }
+
+    public function error404()
+    {
+        return $this->render("pages.error.404");
     }
 }

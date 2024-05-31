@@ -1,12 +1,8 @@
-<?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/serverconnect.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/credits.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/serverconnect.php';
-$title = 'C4K60';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/head.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/menu.php';
-?>
-<div id="screen">
+@extends('layouts.default')
+
+@section('title', 'Đăng nhập')
+
+@section('content')
     <div id="root">
         {{-- Login Form --}}
         <div class="card" style="margin: -15px">
@@ -35,7 +31,4 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/menu.php';
             @endunless
         </div>
     </div>
-</div>
-<?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/navbar.php'; ?>
-<script src="/assets/js/script.js"></script>
+@endsection

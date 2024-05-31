@@ -1,4 +1,3 @@
-<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Cổng thông tin điện tử lớp 12 Chuyên Nga Khóa 60 THPT Chuyên Hà Nam">
@@ -45,6 +44,3 @@
     <!-- Bộ mã NProgress -->
     <script src='/assets/nprogress/nprogress.js'></script>
     <link rel='stylesheet' href='/assets/nprogress/nprogress.css' />
-    <!-- Tiêu đề trang web -->
-    <title><?= $title ?></title>
-</head>

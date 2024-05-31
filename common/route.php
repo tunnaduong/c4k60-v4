@@ -32,6 +32,5 @@ try {
     // Print out the value returned from the dispatched function
     echo $response;
 } catch (Exception $e) {
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/app/views/error/404.php";
-    die;
+    return (new App\Controllers\HomeController)->error404();
 }

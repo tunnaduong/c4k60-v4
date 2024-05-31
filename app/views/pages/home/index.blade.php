@@ -1,25 +1,17 @@
-<?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/serverconnect.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/credits.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/serverconnect.php';
-$title = 'C4K60';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/head.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/menu.php';
-?>
-<div id="screen">
+@extends('layouts.default')
+
+@section('title', 'Trang chủ')
+
+@section('content')
     <div id="root">
         <div id="homeSlideshow" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="4"
-                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="4" aria-label="Slide 5"></button>
             </div>
             <div class="carousel-inner curve">
                 <div class="carousel-item active" data-bs-interval="3000">
@@ -168,8 +160,5 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/menu.php';
             </div>
         </div>
     </div>
-</div>
-<?php
-$home = 'active';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/navbar.php'; ?>
-<script src="/assets/js/script.js"></script>
+@endsection
+@section('homeActive', 'active')

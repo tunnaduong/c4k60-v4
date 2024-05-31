@@ -22,7 +22,7 @@ class AuthController extends BaseController
                 $error = "Tên đăng nhập hoặc mật khẩu không chính xác!";
             }
         }
-        return $this->render("auth.login", compact("error"));
+        return $this->render("pages.auth.login", compact("error"));
     }
 
     public function logout()

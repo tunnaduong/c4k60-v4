@@ -538,3 +538,8 @@ ul > li:before {
     transform: translateY(-20px);
   }
 }
+
+.cursor-pointer {
+  cursor: pointer;
+  user-select: none;
+}
