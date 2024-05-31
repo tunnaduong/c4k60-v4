@@ -59,8 +59,7 @@
  <span style="flex: 1">Đóng góp ý kiến</span>
  <ion-icon name="chevron-forward-outline" style="font-size: 24px;color: #9e9f9f"></ion-icon>
  </div>
- <div style="display:flex;flex-direction: row;align-items:center;padding: 10px 0;gap: 10px"
- goto="/report-a-problem">
+ <div style="display:flex;flex-direction: row;align-items:center;padding: 10px 0;gap: 10px" goto="/report-a-problem">
  <ion-icon name="warning-outline" style="font-size: 24px;color: #bea500"></ion-icon>
  <span style="flex: 1">Báo cáo sự cố</span>
  <ion-icon name="chevron-forward-outline" style="font-size: 24px;color: #9e9f9f"></ion-icon>
