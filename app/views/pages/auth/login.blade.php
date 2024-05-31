@@ -6,7 +6,7 @@
     <div id="root">
         {{-- Login Form --}}
         <div style="display: flex;justify-content:center">
-            <img src="./assets/images/text-logo.png" alt="C4K60 Logo" style="height: 70px;margin-top: 20px">
+            <img src="/assets/images/text-logo.png" alt="C4K60 Logo" style="height: 70px;margin-top: 20px">
         </div>
         <div style="margin-top: 20px">
             <form action="" method="POST" style="display:flex;flex-direction:column;gap:20px">

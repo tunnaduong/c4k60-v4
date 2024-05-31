@@ -12,7 +12,7 @@
  <?php echo $this->yieldContent('content'); ?>
  </div>
  <?php echo $this->runChild('includes.navbar'); ?>
- <script src="./assets/js/script.js"></script>
+ <script src="/assets/js/script.js"></script>
 </body>
 
 </html>

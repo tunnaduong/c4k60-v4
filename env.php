@@ -4,7 +4,7 @@ const DBCHARSET = "utf8";
 const DBUSER = "root";
 const DBPASS = "";
 const DBHOST = "localhost";
-const BASE_URL = "http://c4k60-v4.test/";
+const BASE_URL = "http://localhost/c4k60-v4/";
 function route($url)
 {
     return BASE_URL . $url;

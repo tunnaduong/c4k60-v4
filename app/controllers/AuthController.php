@@ -17,7 +17,7 @@ class AuthController extends BaseController
             $user = $auth->login($username, $password);
             if ($user) {
                 $_SESSION['user'] = $user;
-                header("Location: /");
+                header("Location: ./");
             } else {
                 $error = "Tên đăng nhập hoặc mật khẩu không chính xác!";
             }
@@ -30,6 +30,6 @@ class AuthController extends BaseController
         unset($_SESSION["user"]);
         session_unset();
         session_destroy();
-        header("Location: /login");
+        header("Location: ./login");
     }
 }
