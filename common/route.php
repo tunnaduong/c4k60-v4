@@ -18,6 +18,8 @@ try {
     // khu vực cần quan tâm -----------
     $router->get('/', [App\Controllers\HomeController::class, 'index']);
 
+    $router->any('/login', [App\Controllers\AuthController::class, 'login']);
+
     # NB. You can cache the return value from $router->getData() so you don't have to create the routes each request - massive speed gains
     $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
