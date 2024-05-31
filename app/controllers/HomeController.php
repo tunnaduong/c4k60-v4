@@ -18,4 +18,9 @@ class HomeController extends BaseController
         $notifications = $this->home->getNotifications();
         return $this->render("home.index", compact("notifications"));
     }
+
+    public function menu()
+    {
+        return $this->render("menu.index");
+    }
 }
