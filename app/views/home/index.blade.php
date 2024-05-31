@@ -1,22 +1,25 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/requires/serverconnect.php";
-?>
-<?php
-require $_SERVER['DOCUMENT_ROOT'] . "/requires/credits.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/requires/serverconnect.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/serverconnect.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/credits.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/app/requires/serverconnect.php';
 $title = 'C4K60';
-include $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/includes/menu.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/head.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/menu.php';
 ?>
 <div id="screen">
     <div id="root">
         <div id="homeSlideshow" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#homeSlideshow" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
             </div>
             <div class="carousel-inner curve">
                 <div class="carousel-item active" data-bs-interval="3000">
@@ -134,31 +137,23 @@ include $_SERVER['DOCUMENT_ROOT'] . "/includes/menu.php";
                 <div class="q-noti--timeline">
                     <div class="vertical-line"></div>
                     <ul>
-                        <?php
-                        $sql = "SELECT * FROM thongbaolop ORDER BY id DESC LIMIT 5";
-                        $results = mysqli_query($conn, $sql);
-                        if (mysqli_num_rows($results)) {
-                            while ($row = mysqli_fetch_assoc($results)) {
-                        ?>
-                                <li>
-                                    <div>
-                                        <span class="timeline--date">
-                                            <?php echo date('d/m/Y', strtotime($row['date'])) ?>
-                                        </span>
-                                        <span class="timeline--noti-title link" goto="/notifications/index.php?id=<?php echo $row['id'] ?>"><?php echo $row['title'] ?></span>
-                                    </div>
-                                </li>
-                        <?php
-                            }
-                        } else {
-                            echo "<h5>Không có thông báo nào :)</h5>";
-                        }
-                        ?>
+                        @foreach ($notifications as $notification)
+                            <li>
+                                <div>
+                                    <span class="timeline--date">
+                                        {{ date('d/m/Y', strtotime($notification->date)) }}
+                                    </span>
+                                    <span class="timeline--noti-title link"
+                                        goto="/notifications/{{ $notification->id }}">{{ $notification->title }}</span>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/includes/navbar.php" ?>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/navbar.php'; ?>
 <script src="/assets/js/script.js"></script>
