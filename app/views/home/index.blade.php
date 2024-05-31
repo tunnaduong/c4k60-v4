@@ -84,7 +84,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/includes/menu.php';
         @if (isset($_SESSION['user']))
             <div class="full-width user-greeting root-element" goto="/profile">
                 <div class="user-greeting--avatar-wrapper">
-                    <img src="/assets/images/user.png" class="user-greeting--avatar" alt="Loggedin User Avatar">
+                    <img src={{ $_SESSION['user']->avatar }} class="user-greeting--avatar" alt="Loggedin User Avatar">
                 </div>
                 <div class="user-greeting--greeting">
                     <h5>Chào mừng, {{ $_SESSION['user']->name }}!</h5>
