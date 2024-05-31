@@ -6,10 +6,10 @@ use App\Models\User;
 
 class UserController extends BaseController
 {
-    public function getUserProfile()
+    public function getUserProfile($username)
     {
         $user = new User();
-        $profiles = $user->userProfile();
-        return $this->render("pages.user.profile", compact("profiles"));
+        $profile = $user->userProfile($username);
+        return $this->render("pages.user.profile", compact("profile"));
     }
 }

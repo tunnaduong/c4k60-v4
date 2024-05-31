@@ -19,8 +19,8 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Bộ mã riêng cho giao diện trang web -->
-    <link href="/assets/css/reset.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="./assets/css/reset.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
     <!-- Bộ mã TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Bộ mã Font Awesome -->
@@ -29,7 +29,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
     <!-- Moment JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
@@ -39,8 +39,5 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Bộ mã Waves -->
-    <script src="/assets/waves/waves.min.js"></script>
-    <link href="/assets/waves/waves.min.css" rel="stylesheet">
-    <!-- Bộ mã NProgress -->
-    <script src='/assets/nprogress/nprogress.js'></script>
-    <link rel='stylesheet' href='/assets/nprogress/nprogress.css' />
+    <script src="./assets/waves/waves.min.js"></script>
+    <link href="./assets/waves/waves.min.css" rel="stylesheet">

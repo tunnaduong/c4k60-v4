@@ -3,7 +3,7 @@ const DBNAME = "c4k60";
 const DBCHARSET = "utf8";
 const DBUSER = "root";
 const DBPASS = "";
-const  DBHOST = "localhost";
+const DBHOST = "localhost";
 const BASE_URL = "http://c4k60-v4.test/";
 function route($url)
 {

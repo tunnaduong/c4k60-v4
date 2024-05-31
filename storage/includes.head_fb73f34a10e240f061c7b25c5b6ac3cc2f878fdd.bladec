@@ -19,8 +19,8 @@
  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  <!-- Bộ mã riêng cho giao diện trang web -->
- <link href="/assets/css/reset.css" rel="stylesheet">
- <link href="/assets/css/style.css" rel="stylesheet">
+ <link href="./assets/css/reset.css" rel="stylesheet">
+ <link href="./assets/css/style.css" rel="stylesheet">
  <!-- Bộ mã TailwindCSS -->
  <script src="https://cdn.tailwindcss.com"></script>
  <!-- Bộ mã Font Awesome -->
