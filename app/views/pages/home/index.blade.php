@@ -159,6 +159,14 @@
                 </div>
             </div>
         </div>
+        <div class="default-panel p15 full-width root-element">
+            <div class="default-panel--title">Sinh nhật sắp tới</div>
+            @foreach ($birthdays as $birthday)
+                <div>{{ $daysLeft[$birthday->id] }} ngày nữa là sinh nhật {{ $birthday->name }}
+                    ({{ $birthday->dayofbirth }}/{{ $birthday->monthofbirth }})
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection
 @section('homeActive', 'active')
