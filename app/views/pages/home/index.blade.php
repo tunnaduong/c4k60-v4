@@ -162,7 +162,9 @@
         <div class="default-panel p15 full-width root-element">
             <div class="default-panel--title">Sinh nhật sắp tới</div>
             @foreach ($birthdays as $birthday)
-                <div>{{ $daysLeft[$birthday->id] }} ngày nữa là sinh nhật {{ $birthday->name }}
+                <div class="timeline--noti-title" style="font-size: 14.5px">{{ $daysLeft[$birthday->id] }} ngày nữa sinh
+                    nhật
+                    {{ $birthday->name }}
                     ({{ $birthday->dayofbirth }}/{{ $birthday->monthofbirth }})
                 </div>
             @endforeach
