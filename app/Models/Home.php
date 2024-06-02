@@ -10,4 +10,11 @@ class Home extends BaseModel
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+
+    public function getDonators()
+    {
+        $sql = "SELECT * FROM donators";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
 }

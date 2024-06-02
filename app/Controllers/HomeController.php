@@ -24,8 +24,6 @@ class HomeController extends BaseController
         foreach ($birthdays as $row) {
             $birthdate = $row->dayofbirth . "-" . $row->monthofbirth . "-" . $row->yearofbirth; // desired input DD-MM-YYYY
 
-            //  $birthdate = "25-05-".(date('Y')-1);  if input DD-MM
-
             $current_date = date("d-m-Y");  // current date 
 
             $birth_time = strtotime($birthdate);
@@ -48,7 +46,6 @@ class HomeController extends BaseController
             $time_diff = $time_new - $current_time;
 
             $daysLeft[$row->id] = $time_diff / 86400; // Store days left for this user
-            // $days = $time_diff / 86400;
         }
         // Sort the daysLeft array in descending order
         asort($daysLeft);
@@ -58,7 +55,9 @@ class HomeController extends BaseController
             return $daysLeft[$a->id] <=> $daysLeft[$b->id];
         });
 
-        return $this->render("pages.home.index", compact("notifications", "birthdays", "daysLeft"));
+        $donators = $this->home->getDonators();
+
+        return $this->render("pages.home.index", compact("notifications", "birthdays", "daysLeft", "donators"));
     }
 
     public function menu()

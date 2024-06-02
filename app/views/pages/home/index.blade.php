@@ -169,6 +169,22 @@
                 </div>
             @endforeach
         </div>
+        <div class="default-panel p15 full-width root-element" style="max-height: none">
+            <div class="default-panel--title">Nhà tài trợ</div>
+            <p class="timeline--noti-title" style="font-size: 15.5px;margin-bottom: 10px">C4K60 Web và C4K60 Mobile có thể
+                đã không được
+                tồn tại mà không có sự hỗ trợ
+                từ các mạnh thường quân
+                sau:</p>
+            <ul style="padding: 0 25px">
+                @foreach ($donators as $donator)
+                    <li class="timeline--noti-title" style="font-size: 15.5px">
+                        <span @class(['link' => $donator->social_link != null])>{{ $donator->name }}</span>
+                        <span> - {{ $donator->amount }}</span>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
 @endsection
 @section('homeActive', 'active')
