@@ -79,6 +79,47 @@ class HomeController extends BaseController
         return $this->render("pages.sponsors.index", compact("donators"));
     }
 
+    public function birthdays()
+    {
+        $birthdays = $this->user->getAllBirthdays();
+        $daysLeft = []; // Array to store days left for each user
+        foreach ($birthdays as $row) {
+            $birthdate = $row->dayofbirth . "-" . $row->monthofbirth . "-" . $row->yearofbirth; // desired input DD-MM-YYYY
+
+            $current_date = date("d-m-Y");  // current date 
+
+            $birth_time = strtotime($birthdate);
+            $current_time = strtotime($current_date);
+
+            $arr1 = explode("-", $birthdate);
+            $year1 = $arr1[2];
+
+            $arr2 = explode("-", $current_date);
+            $year2 = $arr2[2];
+
+            $year_diff = $year2 - $year1;
+
+            $time_new = strtotime("+" . $year_diff . " year", $birth_time);
+
+            if ($time_new < $current_time) {
+                $time_new = strtotime("+1 year", $time_new);
+            }
+
+            $time_diff = $time_new - $current_time;
+
+            $daysLeft[$row->id] = $time_diff / 86400; // Store days left for this user
+        }
+        // Sort the daysLeft array in descending order
+        asort($daysLeft);
+
+        // Sort the birthdays array based on the daysLeft array
+        usort($birthdays, function ($a, $b) use ($daysLeft) {
+            return $daysLeft[$a->id] <=> $daysLeft[$b->id];
+        });
+
+        return $this->render("pages.birthdays.index", compact("birthdays", "daysLeft"));
+    }
+
     public function error404()
     {
         return $this->render("pages.error.404");

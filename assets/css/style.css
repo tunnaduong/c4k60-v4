@@ -510,7 +510,8 @@ ul > li:before {
   .shortcuts--button-title,
   .default-panel--title,
   .timeline--date,
-  .timeline--noti-title {
+  .timeline--noti-title,
+  .text-zoom {
     zoom: 0.87;
   }
 
