@@ -75,8 +75,8 @@ class HomeController extends BaseController
 
     public function sponsors()
     {
-        $sponsors = $this->home->getDonators();
-        return $this->render("pages.sponsors.index", compact("sponsors"));
+        $donators = $this->home->getDonators();
+        return $this->render("pages.sponsors.index", compact("donators"));
     }
 
     public function error404()
