@@ -2,7 +2,7 @@
 <html>
 
 <head>
- <title>C4K60 - <?php echo $this->yieldContent('title'); ?></title>
+ <title><?php echo $this->yieldContent('title'); ?> - C4K60</title>
  <?php echo $this->runChild('includes.head'); ?>
 </head>
 

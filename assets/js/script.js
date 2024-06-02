@@ -9,6 +9,7 @@ $(document).ready(function () {
   initWaves();
   // loop and add class cursor pointer on [goto]
   $("[goto]").addClass("cursor-pointer");
+  $("[onclick]").addClass("cursor-pointer");
 });
 
 $("html").on("click", "[goto]", function (e) {

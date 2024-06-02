@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title><?php echo $this->yieldContent('title'); ?> - C4K60</title>
+ <?php echo $this->runChild('includes.head'); ?>
+</head>
+
+<body>
+ <?php echo $this->runChild('includes.menu'); ?>
+ <div id="screen">
+ <div id="root" style="background-color: <?php echo $this->yieldContent('background-color', 'white'); ?>">
+ <div
+ style="display: flex;flex-direction:row;align-items:center;background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(18px);margin: -15px -15px 10px;padding: 15px;border-bottom: 1px solid #e5e5e5;position:sticky;top:-15px;z-index: 99">
+ <ion-icon name="arrow-back-outline" style="position: absolute;font-size: 24px;top: 18px"
+ onclick="history.back()"></ion-icon>
+ <span class="default-panel--title" style="flex: 1;text-align:center"><?php echo $this->yieldContent('title'); ?></span>
+ </div>
+ <?php echo $this->yieldContent('content'); ?>
+ </div>
+ </div>
+ <?php echo $this->runChild('includes.navbar'); ?>
+ <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

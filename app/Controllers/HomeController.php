@@ -67,6 +67,18 @@ class HomeController extends BaseController
         return $this->render("pages.menu.index");
     }
 
+    public function changelogs()
+    {
+        $changelogs = $this->home->getChangelogsAll();
+        return $this->render("pages.changelogs.index", compact("changelogs"));
+    }
+
+    public function sponsors()
+    {
+        $sponsors = $this->home->getDonators();
+        return $this->render("pages.sponsors.index", compact("sponsors"));
+    }
+
     public function error404()
     {
         return $this->render("pages.error.404");

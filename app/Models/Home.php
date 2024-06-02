@@ -24,4 +24,18 @@ class Home extends BaseModel
         $this->setQuery($sql);
         return $this->loadRow();
     }
+
+    public function getChangelogsAll()
+    {
+        $sql = "SELECT * FROM changelogs ORDER BY id DESC";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
+
+    public function getDonatorsAll()
+    {
+        $sql = "SELECT * FROM donators";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
 }

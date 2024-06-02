@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>C4K60 - @yield('title')</title>
+    <title>@yield('title') - C4K60</title>
     @include('includes.head')
 </head>
 
