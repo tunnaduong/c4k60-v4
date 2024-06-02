@@ -139,7 +139,14 @@
             </div>
         </div>
         <div class="quicklook-notifications default-panel p15 full-width root-element">
-            <div class="default-panel--title">Thông báo lớp</div>
+            <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-between"><span
+                    class="default-panel--title">Thông báo lớp</span>
+                <div style="display: flex;flex-direction:row;align-items:center;gap:5px;color: #717171"
+                    class="timeline--noti-title" goto="/notifications">
+                    Xem tất cả
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+            </div>
             <div class="q-noti">
                 <div class="q-noti--timeline">
                     <div class="vertical-line"></div>
@@ -160,7 +167,15 @@
             </div>
         </div>
         <div class="default-panel p15 full-width root-element">
-            <div class="default-panel--title">Sinh nhật sắp tới</div>
+            <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-between"><span
+                    class="default-panel--title">Sinh nhật
+                    sắp tới</span>
+                <div style="display: flex;flex-direction:row;align-items:center;gap:5px;color: #717171"
+                    class="timeline--noti-title" goto="/birthdays">
+                    Xem tất cả
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+            </div>
             @foreach ($birthdays as $birthday)
                 <div class="timeline--noti-title" style="font-size: 14.5px">{{ $daysLeft[$birthday->id] }} ngày nữa sinh
                     nhật
@@ -170,7 +185,14 @@
             @endforeach
         </div>
         <div class="default-panel p15 full-width root-element" style="max-height: none">
-            <div class="default-panel--title">Nhà tài trợ</div>
+            <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-between"><span
+                    class="default-panel--title">Nhà tài trợ</span>
+                <div style="display: flex;flex-direction:row;align-items:center;gap:5px;color: #717171"
+                    class="timeline--noti-title" goto="/sponsors">
+                    Xem tất cả
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+            </div>
             <p class="timeline--noti-title" style="font-size: 15.5px;margin-bottom: 10px">C4K60 Web và C4K60 Mobile có thể
                 đã không được
                 tồn tại mà không có sự hỗ trợ
@@ -179,7 +201,8 @@
             <ul style="padding: 0 25px">
                 @foreach ($donators as $donator)
                     <li class="timeline--noti-title" style="font-size: 15.5px">
-                        <span @class(['link' => $donator->social_link != null])>{{ $donator->name }}</span>
+                        <span @class(['link' => $donator->social_link != null])
+                            {{ $donator->social_link != null ? 'goto=' . $donator->social_link : '' }}>{{ $donator->name }}</span>
                         <span> - {{ $donator->amount }}</span>
                     </li>
                 @endforeach
