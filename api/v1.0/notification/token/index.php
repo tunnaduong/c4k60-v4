@@ -24,7 +24,7 @@ if (isset($decodedData['username']) && isset($decodedData['token'])) {
     exit;
   }
   
-  $sql = "SELECT * FROM c4_user WHERE expo_push_notification_token = '$token'";
+  $sql = "SELECT * FROM c4_user WHERE expo_push_notification_token = '$token' AND username = '$username'";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     echo json_encode([

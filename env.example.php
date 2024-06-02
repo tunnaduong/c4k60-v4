@@ -1,6 +1,6 @@
 <?php
-const DBNAME = "c4k60";
+const DBNAME = "";
 const DBCHARSET = "utf8";
-const DBUSER = "root";
+const DBUSER = "";
 const DBPASS = "";
-const DBHOST = "localhost";
+const DBHOST = "";
