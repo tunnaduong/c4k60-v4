@@ -57,7 +57,9 @@ class HomeController extends BaseController
 
         $donators = $this->home->getDonators();
 
-        return $this->render("pages.home.index", compact("notifications", "birthdays", "daysLeft", "donators"));
+        $changelogs = $this->home->getChangelogs();
+
+        return $this->render("pages.home.index", compact("notifications", "birthdays", "daysLeft", "donators", "changelogs"));
     }
 
     public function menu()

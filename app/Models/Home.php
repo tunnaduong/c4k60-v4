@@ -17,4 +17,11 @@ class Home extends BaseModel
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+
+    public function getChangelogs()
+    {
+        $sql = "SELECT * FROM changelogs ORDER BY id DESC LIMIT 1";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
 }

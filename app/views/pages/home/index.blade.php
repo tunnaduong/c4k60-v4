@@ -208,6 +208,30 @@
                 @endforeach
             </ul>
         </div>
+        <div class="default-panel p15 full-width root-element" style="max-height: none">
+            <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-between"><span
+                    class="default-panel--title">Những thay đổi</span>
+                <div style="display: flex;flex-direction:row;align-items:center;gap:5px;color: #717171"
+                    class="timeline--noti-title" goto="/changelogs">
+                    Xem tất cả
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+            </div>
+            <p class="timeline--noti-title" style="font-size: 15.5px">Phiên bản
+                {{ $changelogs->version }}</p>
+            <div class="timeline--noti-title" style="font-size: 14px;font-weight:300;margin-bottom:10px">Ngày phát hành:
+                {{ date_format(date_create($changelogs->release_date), 'd/m/Y') }}</div>
+            <ul style="padding: 0 25px">
+                @php
+                    $lines = explode("\r\n", $changelogs->changelogs);
+                @endphp
+                @foreach (array_slice($lines, 0, 7) as $line)
+                    <li class="timeline--noti-title" style="font-size: 15px">
+                        {{ $line }}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
 @endsection
 @section('homeActive', 'active')
