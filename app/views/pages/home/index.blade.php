@@ -193,14 +193,14 @@
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
             </div>
-            <p class="timeline--noti-title" style="font-size: 15.5px;margin-bottom: 10px">C4K60 Web và C4K60 Mobile có thể
+            <p class="timeline--noti-title" style="font-size: 15px;margin-bottom: 10px">C4K60 Web và C4K60 Mobile có thể
                 đã không được
                 tồn tại mà không có sự hỗ trợ
                 từ các mạnh thường quân
                 sau:</p>
             <ul style="padding: 0 25px">
                 @foreach ($donators as $donator)
-                    <li class="timeline--noti-title" style="font-size: 15.5px">
+                    <li class="timeline--noti-title" style="font-size: 15px">
                         <span @class(['link' => $donator->social_link != null])
                             {{ $donator->social_link != null ? 'goto=' . $donator->social_link : '' }}>{{ $donator->name }}</span>
                         <span> - {{ $donator->amount }}</span>
