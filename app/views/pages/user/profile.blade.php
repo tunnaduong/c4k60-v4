@@ -46,4 +46,5 @@
         </div>
     </div>
 @endsection
+@section('menuIcon', 'menu')
 @section('menuActive', 'active')

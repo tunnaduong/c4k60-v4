@@ -31,4 +31,11 @@ class Home extends BaseModel
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+
+    public function getNotificationsAll()
+    {
+        $sql = "SELECT * FROM thongbaolop ORDER BY id DESC";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
 }

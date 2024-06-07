@@ -38,4 +38,5 @@
     </div>
 @endsection
 
+@section('homeIcon', 'home')
 @section('homeActive', 'active')

@@ -23,6 +23,7 @@
  </ul>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
 <?php $this->stopSection(); ?>
+<?php $this->startSection('homeIcon', 'home'); ?>
 <?php $this->startSection('homeActive', 'active'); ?>
 
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.screen'); } ?>

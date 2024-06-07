@@ -35,4 +35,5 @@
         mặt tinh thần rất lớn đối
         với mình!</p>
 @endsection
+@section('homeIcon', 'home')
 @section('homeActive', 'active')

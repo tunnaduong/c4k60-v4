@@ -120,6 +120,12 @@ class HomeController extends BaseController
         return $this->render("pages.birthdays.index", compact("birthdays", "daysLeft"));
     }
 
+    public function notifications()
+    {
+        $notifications = $this->home->getNotificationsAll();
+        return $this->render("pages.notifications.index", compact("notifications"));
+    }
+
     public function error404()
     {
         return $this->render("pages.error.404");

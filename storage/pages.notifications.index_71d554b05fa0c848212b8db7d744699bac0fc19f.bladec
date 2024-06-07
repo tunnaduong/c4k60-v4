@@ -1,0 +1,15 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title', 'Thông báo lớp'); ?>
+
+<?php $this->startSection('content'); ?>
+ <div>
+ <div style="background-color: #dbeafe">Tất cả</div>
+ <div>Chưa đọc</div>
+ </div>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('notiIcon', 'notifications'); ?>
+<?php $this->startSection('notiActive', 'active'); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.screen'); } ?>
