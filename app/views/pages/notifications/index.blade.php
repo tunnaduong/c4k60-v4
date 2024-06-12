@@ -32,8 +32,8 @@
                     </div>
                 </div>
                 <div class="flex-1" goto="/notifications/{{ $notification->id }}">
-                    <div class="font-bold">{{ $notification->title }}</div>
-                    <div style="font-size: 15px" class="texttruncate">{{ $notification->content }}
+                    <div class="font-bold text-zoom">{{ $notification->title }}</div>
+                    <div style="font-size: 15px" class="texttruncate text-zoom">{{ $notification->content }}
                     </div>
                 </div>
                 <div class="flex items-center mr-2 btn-hover cursor-pointer">
