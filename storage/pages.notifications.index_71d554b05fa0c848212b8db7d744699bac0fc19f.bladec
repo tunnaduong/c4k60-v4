@@ -11,8 +11,8 @@
  Chưa
  đọc</div>
  </div>
- <div
- style="display: flex;flex-direction:row;justify-content:space-between;margin-top: 15px;align-content:center;margin-bottom: 15px">
+ <div style="display: flex;flex-direction:row;justify-content:space-between;margin-top: 15px;align-content:center;margin-bottom: 15px;position:sticky;top:2.8em;background-color:white;z-index:99;height:40px;flex-wrap:wrap"
+ class="bcs-lop">
  <div class="text-zoom" style="font-size: 18px;font-weight:600">Từ ban cán sự lớp</div>
  <div class="text-zoom" style="line-height: 30px;color:#5489f0" goto>Xem tất cả</div>
  </div>
