@@ -22,3 +22,12 @@ $("html").on("click", "[goto]", function (e) {
 function go(url) {
   window.location.href = url;
 }
+
+const subjects = document.querySelectorAll(".texttruncate");
+
+subjects.forEach((subject) => {
+  let text = subject.textContent;
+  if (text.length > 87) {
+    subject.textContent = `${text.slice(0, 90)}...`;
+  }
+});

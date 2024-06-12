@@ -47,6 +47,7 @@
  </div>
  </div>
 <?php $this->stopSection(); ?>
+<?php $this->startSection('menuIcon', 'menu'); ?>
 <?php $this->startSection('menuActive', 'active'); ?>
 
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.default'); } ?>
