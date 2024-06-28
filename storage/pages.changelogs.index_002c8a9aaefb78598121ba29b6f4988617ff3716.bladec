@@ -22,6 +22,23 @@
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </ul>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <hr>
+ <center>
+ <img src="/assets/images/easter-eggs.png" width="100" alt="Easter Eggs nè" style="margin-top:15px">
+ </center>
+ <center class="text-zoom" style="font-size: 15px;margin-top: 15px">Oops... Cảm ơn vì bạn đã lướt xuống đến tận
+ đây.<br>Và cũng xin chúc mừng bạn đã tìm thấy Easter Egg ẩn!<br>Chắc hẳn các bạn rất tò mò về website nhỉ?<br>
+ Dưới
+ đây là món quà nhỏ
+ của
+ mình: <a href="https://github.com/tunnaduong/c4k60-v4" class="link">Mã nguồn
+ C4K60</a><br>
+ <div style="font-size: 12px;color:gray;margin-top:15px">Đây là một dự án mã nguồn mở, mọi người được phép tự chỉnh
+ sửa trang web này
+ mà
+ không cần phải xin phép từ tác giả, vì vậy hãy đừng ngại ngùng mày mò nghiên cứu và thay đổi! Đừng quên ghi
+ nguồn từ C4K60.com để tôn trọng công sức của những người đã đóng góp cho dự án.</div>
+ </center>
 <?php $this->stopSection(); ?>
 <?php $this->startSection('homeIcon', 'home'); ?>
 <?php $this->startSection('homeActive', 'active'); ?>
