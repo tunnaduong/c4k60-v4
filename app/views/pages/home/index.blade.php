@@ -80,7 +80,7 @@
                 </div>
                 <div class="user-greeting--greeting">
                     <h5>Chào mừng, {{ $_SESSION['user']->name }}!</h5>
-                    <p>Chúc bạn một ngày tốt lành và tràn đầy năng lượng.</p>
+                    <p id="loiChuc">Chúc bạn một ngày tốt lành và tràn đầy năng lượng.</p>
                 </div>
                 <div class="user-greeting--icon-wrapper">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
