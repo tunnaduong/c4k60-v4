@@ -23,6 +23,7 @@
         thanh toán mình đang mở:</p>
     <ol style="list-style:decimal;padding: 0 25px;margin-bottom: 10px">
         <li class="timeline--noti-title" style="font-size: 15px">Techcombank: 8821112003</li>
+        <li class="timeline--noti-title" style="font-size: 15px">TP Bank: 21112003210</li>
         <li class="timeline--noti-title" style="font-size: 15px">MoMo: 0707006421</li>
         <li class="timeline--noti-title" style="font-size: 15px">Viettel Money: 9704229245853309</li>
         <li class="timeline--noti-title" style="font-size: 15px">MSB: 03801017934767</li>
