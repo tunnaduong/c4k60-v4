@@ -38,4 +38,11 @@ class Home extends BaseModel
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+
+    public function getAlbumsAll()
+    {
+        $sql = "SELECT * FROM album";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
 }

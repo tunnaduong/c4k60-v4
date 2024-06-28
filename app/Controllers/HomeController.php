@@ -126,6 +126,12 @@ class HomeController extends BaseController
         return $this->render("pages.notifications.index", compact("notifications"));
     }
 
+    public function photos()
+    {
+        $albums = $this->home->getAlbumsAll();
+        return $this->render("pages.photos.index", compact("albums"));
+    }
+
     public function error404()
     {
         return $this->render("pages.error.404");

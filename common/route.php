@@ -34,6 +34,8 @@ try {
 
     $router->get('/notifications', [App\Controllers\HomeController::class, 'notifications']);
 
+    $router->get('/photos', [App\Controllers\HomeController::class, 'photos']);
+
     # NB. You can cache the return value from $router->getData() so you don't have to create the routes each request - massive speed gains
     $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
@@ -41,6 +43,9 @@ try {
 
     // Print out the value returned from the dispatched function
     echo $response;
-} catch (Exception $e) {
+} catch (Phroute\Phroute\Exception\HttpRouteNotFoundException $e) {
     return (new App\Controllers\HomeController)->error404();
+} catch (Phroute\Phroute\Exception\HttpMethodNotAllowedException $e) {
+} catch (Exception $e) {
+    echo $e->getMessage();
 }

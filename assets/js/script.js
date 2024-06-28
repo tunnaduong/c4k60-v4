@@ -3,6 +3,7 @@ function initWaves() {
   Waves.attach(".user-greeting");
   Waves.attach(".menu--search");
   Waves.attach(".shortcuts--button");
+  Waves.attach(".ripple");
   Waves.init();
 }
 $(document).ready(function () {
