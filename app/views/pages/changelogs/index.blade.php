@@ -10,7 +10,7 @@
             {{ date_format(date_create($changelog->release_date), 'd/m/Y') }}</div>
         <ul style="padding: 0 25px;margin-bottom: 10px">
             @php
-                $lines = explode("\r\n", $changelog->changelogs);
+                $lines = preg_split("/\r\n|\n/", $changelog->changelogs);
             @endphp
             @foreach ($lines as $line)
                 <li class="timeline--noti-title" style="font-size: 15px">
