@@ -45,4 +45,25 @@ class Home extends BaseModel
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+
+    public function getImagesByAlbumID($id)
+    {
+        $sql = "SELECT * FROM thuvienanh WHERE album = '$id'";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
+
+    public function getVideosByAlbumID($id)
+    {
+        $sql = "SELECT * FROM videos WHERE album = '$id'";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
+
+    public function getAlbum($id)
+    {
+        $sql = "SELECT * FROM album WHERE id = '$id'";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
 }

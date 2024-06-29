@@ -101,7 +101,7 @@
             </div>
         @endif
         <div class="shortcuts full-width root-element grid-container">
-            <div class="shortcuts--button grid-item" goto="/photos">
+            <div class="shortcuts--button grid-item" goto="/gallery">
                 <div class="shortcuts--button-icon btn-photos">
                     <ion-icon name="images"></ion-icon>
                 </div>

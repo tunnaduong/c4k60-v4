@@ -21,6 +21,7 @@
  </div>
  <?php echo $this->runChild('includes.navbar'); ?>
  <script src="/assets/js/script.js"></script>
+ <?php echo $this->yieldContent('modal'); ?>
 </body>
 
 </html>

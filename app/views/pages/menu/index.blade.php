@@ -24,7 +24,7 @@
             </div>
         @endif
         <hr style="border-top: 1px solid gray">
-        <div style="display:flex;flex-direction: row;align-items:center;padding: 10px 0;gap: 10px" goto="/photos">
+        <div style="display:flex;flex-direction: row;align-items:center;padding: 10px 0;gap: 10px" goto="/gallery">
             <ion-icon name="images-outline" style="font-size: 24px;color: #ffa93c"></ion-icon>
             <span style="flex: 1">Ảnh và video</span>
             <ion-icon name="chevron-forward-outline" style="font-size: 24px;color: #9e9f9f"></ion-icon>

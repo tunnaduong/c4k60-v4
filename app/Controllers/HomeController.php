@@ -126,10 +126,24 @@ class HomeController extends BaseController
         return $this->render("pages.notifications.index", compact("notifications"));
     }
 
-    public function photos()
+    public function gallery()
     {
         $albums = $this->home->getAlbumsAll();
-        return $this->render("pages.photos.index", compact("albums"));
+        return $this->render("pages.gallery.index", compact("albums"));
+    }
+
+    public function album($albumID)
+    {
+        $album = $this->home->getAlbum($albumID);
+        $albumName = $album->name;
+
+        if ($album->type != "video") {
+            $images = $this->home->getImagesByAlbumID($albumID);
+            return $this->render("pages.gallery.album", compact("images", "albumName"));
+        } else {
+            $videos = $this->home->getVideosByAlbumID($albumID);
+            return $this->render("pages.gallery.album", compact("videos", "albumName"));
+        }
     }
 
     public function error404()

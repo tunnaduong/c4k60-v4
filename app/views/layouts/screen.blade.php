@@ -21,6 +21,7 @@
     </div>
     @include('includes.navbar')
     <script src="/assets/js/script.js"></script>
+    @yield('modal')
 </body>
 
 </html>
