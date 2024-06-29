@@ -39,24 +39,22 @@ $(document).ready(function () {
   var minutes = today.getMinutes();
 
   if ((hours >= 5 && hours < 10) || (hours === 10 && minutes < 30)) {
-    $("#loiChuc").html(
-      "Chúc buổi sáng tốt lành. Chúc bạn có một ngày tràn ngập những khoảnh khắc hào hứng và tuyệt vời."
-    );
+    $("#loiChuc").html("Chúc bạn có một ngày mới năng động và hiệu quả.");
   } else if (hours >= 11 && hours < 13) {
     $("#loiChuc").html(
       "Chúc bạn có một buổi trưa thật vui vẻ, ngập tràn năng lượng."
     );
   } else if ((hours >= 13 && hours < 18) || (hours === 18 && minutes < 30)) {
     $("#loiChuc").html(
-      "Chiều hôm nay không khí thật trong lành và mát mẻ. Chúc bạn có một buổi chiều vui vẻ và cả ngày hạnh phúc!"
+      "Chúc bạn có một buổi chiều vui vẻ và cả ngày hạnh phúc!"
     );
   } else if ((hours >= 18 && hours < 22) || (hours === 22 && minutes < 30)) {
     $("#loiChuc").html(
-      "Chúc cậu có một buổi tối an lành, vui vẻ và chuẩn bị cho ngày mới năng động thật nhiều niềm vui nhé. Good night!"
+      "Chúc cậu có một buổi tối an lành, vui vẻ nhé. Good night!"
     );
   } else {
     $("#loiChuc").html(
-      "Nằm xuống giường, nhắm mắt vào, đi ngủ đi và mơ những giấc mơ ngọt ngào nhất bạn nhé. Have a good night!"
+      "Nằm xuống giường đi và mơ những giấc mơ ngọt ngào nhất bạn nhé!"
     );
   }
 });
