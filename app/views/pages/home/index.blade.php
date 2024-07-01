@@ -176,7 +176,7 @@
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
             </div>
-            @foreach ($birthdays as $birthday)
+            @foreach ($filteredBirthdays as $birthday)
                 <div class="timeline--noti-title" style="font-size: 14.5px">{{ $daysLeft[$birthday->id] }} ngày nữa sinh
                     nhật
                     {{ $birthday->name }}

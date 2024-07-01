@@ -11,13 +11,6 @@ class User extends BaseModel
         return $this->loadRow();
     }
 
-    public function getBirthdays()
-    {
-        $sql = "SELECT id, name, dayofbirth, monthofbirth, yearofbirth, gender, username FROM c4_user LIMIT 5";
-        $this->setQuery($sql);
-        return $this->loadAllRows();
-    }
-
     public function getAllBirthdays()
     {
         $sql = "SELECT id, name, dayofbirth, monthofbirth, yearofbirth, gender, username, avatar FROM c4_user";

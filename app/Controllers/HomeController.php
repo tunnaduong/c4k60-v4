@@ -19,7 +19,8 @@ class HomeController extends BaseController
     public function index()
     {
         $notifications = $this->home->getNotifications();
-        $birthdays = $this->user->getBirthdays();
+        $birthdays = $this->user->getAllBirthdays();
+
         $daysLeft = []; // Array to store days left for each user
         foreach ($birthdays as $row) {
             $birthdate = $row->dayofbirth . "-" . $row->monthofbirth . "-" . $row->yearofbirth; // desired input DD-MM-YYYY
@@ -47,19 +48,30 @@ class HomeController extends BaseController
 
             $daysLeft[$row->id] = $time_diff / 86400; // Store days left for this user
         }
-        // Sort the daysLeft array in descending order
+
+        // Sort the daysLeft array in ascending order
         asort($daysLeft);
 
-        // Sort the birthdays array based on the daysLeft array
-        usort($birthdays, function ($a, $b) use ($daysLeft) {
+        // Limit the daysLeft array to the top 5
+        $daysLeft = array_slice($daysLeft, 0, 5, true);
+
+        // Filter the birthdays array to include only those present in the limited daysLeft array
+        $filteredBirthdays = array_filter($birthdays, function ($birthday) use ($daysLeft) {
+            return array_key_exists($birthday->id, $daysLeft);
+        });
+
+        // Ensure the birthdays are sorted according to days left
+        usort($filteredBirthdays, function ($a, $b) use ($daysLeft) {
             return $daysLeft[$a->id] <=> $daysLeft[$b->id];
         });
+
+        // Use $filteredBirthdays instead of $birthdays for further operations
 
         $donators = $this->home->getDonators();
 
         $changelogs = $this->home->getChangelogs();
 
-        return $this->render("pages.home.index", compact("notifications", "birthdays", "daysLeft", "donators", "changelogs"));
+        return $this->render("pages.home.index", compact("notifications", "filteredBirthdays", "daysLeft", "donators", "changelogs"));
     }
 
     public function menu()
