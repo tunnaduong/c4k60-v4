@@ -2,7 +2,7 @@
 # Author: Yujin Boby
 # Web: https://serverok.in/php-script-to-pull-changes-from-git-repository
 # Email: admin@serverOk.in
-# This script pull latest code from git.
+# This script pull latest code from git...
 
 $pw = isset($_GET["pw"]) ? $_GET["pw"] : '';
 
