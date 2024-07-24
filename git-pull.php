@@ -10,7 +10,7 @@ if ($pw != 'tunganhdeptrai')  {
     die("Invalid password");
 }
 
-$result = exec("git pull origin main 2>&1", $r2);
+$result = exec("git pull 2>&1", $r2);
 
 echo "<pre>";
 
