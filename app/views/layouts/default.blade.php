@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
+@php
+    $rel = isset($_GET['rel']) ? $_GET['rel'] : null;
+@endphp
 
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZG381JXWG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-YZG381JXWG');
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3425905751761094"
-     crossorigin="anonymous"></script>
-    <title>@yield('title') - C4K60</title>
-    @include('includes.head')
-</head>
+@if ($rel != 'page')
+
+    <head>
+        <title>@yield('title') - C4K60</title>
+        @include('includes.head')
+    </head>
+@endif
 
 <body>
-    @include('includes.menu')
-    <div id="screen">
-        @yield('content')
-    </div>
-    @include('includes.navbar')
-    <script src="/assets/js/script.js"></script>
+    @if ($rel != 'page')
+        @include('includes.menu')
+        <div id="screen">
+    @endif
+    @yield('content')
+    @if ($rel != 'page')
+        </div>
+        @include('includes.navbar')
+        <script src="/assets/js/script.js"></script>
+    @endif
 </body>
 
 </html>

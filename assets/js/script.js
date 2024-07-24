@@ -6,34 +6,47 @@ function initWaves() {
   Waves.attach(".ripple");
   Waves.init();
 }
+
+NProgress.start();
+NProgress.configure({ showSpinner: false });
 $(document).ready(function () {
   initWaves();
   // loop and add class cursor pointer on [goto]
   $("[href]").addClass("cursor-pointer");
   $("[onclick]").addClass("cursor-pointer");
+  NProgress.done();
+  loadAll();
 });
 
-$("html").on("click", "[href]", function (e) {
-  e.preventDefault(); // cancel click
-  // add class cursor pointer
-  var url = $(this).attr("href");
-  window.location.href = url;
+$(document).ajaxComplete(function () {
+  initWaves();
+  $("[href]").addClass("cursor-pointer");
+  $("[onclick]").addClass("cursor-pointer");
+  NProgress.done();
+  loadAll();
 });
+
+// $("html").on("click", "[href]", function (e) {
+//   e.preventDefault(); // cancel click
+//   // add class cursor pointer
+//   var url = $(this).attr("href");
+//   window.location.href = url;
+// });
 
 function go(url) {
   window.location.href = url;
 }
 
-const subjects = document.querySelectorAll(".texttruncate");
+function loadAll() {
+  const subjects = document.querySelectorAll(".texttruncate");
 
-subjects.forEach((subject) => {
-  let text = subject.textContent;
-  if (text.length > 87) {
-    subject.textContent = `${text.slice(0, 90)}...`;
-  }
-});
+  subjects.forEach((subject) => {
+    let text = subject.textContent;
+    if (text.length > 87) {
+      subject.textContent = `${text.slice(0, 90)}...`;
+    }
+  });
 
-$(document).ready(function () {
   var today = new Date();
   var hours = today.getHours();
   var minutes = today.getMinutes();
@@ -57,4 +70,30 @@ $(document).ready(function () {
       "Nằm xuống giường đi và mơ những giấc mơ ngọt ngào nhất bạn nhé!"
     );
   }
+}
+
+$("html").on("click", "[href]", function (e) {
+  e.preventDefault(); // cancel click
+  var url = $(this).attr("href");
+  url = url.replace("#", "");
+  window.history.pushState({}, "", url);
+  NProgress.start();
+
+  $.ajax({
+    url: url + "?rel=page",
+    success: function (data) {
+      $("#screen").html(data);
+    },
+  });
 });
+
+window.onpopstate = function () {
+  NProgress.start();
+
+  $.ajax({
+    url: document.location + "?rel=page",
+    success: function (data) {
+      $("#screen").html(data);
+    },
+  });
+};
