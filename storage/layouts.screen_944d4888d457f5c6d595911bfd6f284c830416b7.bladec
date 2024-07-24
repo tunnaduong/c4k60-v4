@@ -2,6 +2,17 @@
 <html>
 
 <head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZG381JXWG"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ 
+ gtag('config', 'G-YZG381JXWG');
+ </script>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3425905751761094"
+ crossorigin="anonymous"></script>
  <title><?php echo $this->yieldContent('title'); ?> - C4K60</title>
  <?php echo $this->runChild('includes.head'); ?>
 </head>

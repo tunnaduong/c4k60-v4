@@ -19,7 +19,7 @@
     <div class="flex flex-col gap-3">
         @foreach ($notifications as $notification)
             <div style="display:flex;flex-direction:row; gap: 15px">
-                <div class="relative" goto="/notifications/{{ $notification->id }}">
+                <div class="relative" href="/notifications/{{ $notification->id }}">
                     @if ($notification->image == 'no')
                         <img src="/assets/images/notify.png" class="aspect-square w-16 h-16 rounded-full min-w-16" />
                     @else
@@ -31,7 +31,7 @@
                         <ion-icon name="notifications" class="text-white" style="font-size: 18px"></ion-icon>
                     </div>
                 </div>
-                <div class="flex-1" goto="/notifications/{{ $notification->id }}">
+                <div class="flex-1" href="/notifications/{{ $notification->id }}">
                     <div class="font-bold text-zoom">{{ $notification->title }}</div>
                     <div style="font-size: 15px" class="texttruncate text-zoom">{{ $notification->content }}
                     </div>

@@ -36,7 +36,7 @@
             </div>
             <div style="display: flex;flex-direction:row;align-items:center;gap:5px;margin-bottom: 15px">
                 <ion-icon style="font-size: 24px" name="call"></ion-icon>
-                <span goto="tel:{{ $profile->phone_number }}" style="font-weight: 700">{{ $profile->phone_number }}</span>
+                <span href="tel:{{ $profile->phone_number }}" style="font-weight: 700">{{ $profile->phone_number }}</span>
             </div>
         </div>
         <div style="border-top: 10px solid rgb(190, 190, 190);margin: 20px -15px"></div>

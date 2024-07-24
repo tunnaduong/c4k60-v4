@@ -9,14 +9,14 @@ function initWaves() {
 $(document).ready(function () {
   initWaves();
   // loop and add class cursor pointer on [goto]
-  $("[goto]").addClass("cursor-pointer");
+  $("[href]").addClass("cursor-pointer");
   $("[onclick]").addClass("cursor-pointer");
 });
 
-$("html").on("click", "[goto]", function (e) {
+$("html").on("click", "[href]", function (e) {
   e.preventDefault(); // cancel click
   // add class cursor pointer
-  var url = $(this).attr("goto");
+  var url = $(this).attr("href");
   window.location.href = url;
 });
 

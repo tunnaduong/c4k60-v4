@@ -1,21 +1,21 @@
 <nav class="site-navbar">
- <div class="site-navbar--item <?php echo $this->yieldContent('homeActive'); ?>" goto="/">
+ <div class="site-navbar--item <?php echo $this->yieldContent('homeActive'); ?>" href="/">
  <ion-icon name="<?php echo $this->yieldContent('homeIcon', 'home-outline'); ?>"></ion-icon>
  <span class="site-navbar--item-title">Trang chủ</span>
  </div>
- <div class="site-navbar--item <?php echo $this->yieldContent('feedActive'); ?>" goto="/feed">
+ <div class="site-navbar--item <?php echo $this->yieldContent('feedActive'); ?>" href="/feed">
  <ion-icon name="<?php echo $this->yieldContent('feedIcon', 'newspaper-outline'); ?>"></ion-icon>
  <span class="site-navbar--item-title">Bảng tin</span>
  </div>
- <div class="site-navbar--item <?php echo $this->yieldContent('chatActive'); ?>" goto="/chat">
+ <div class="site-navbar--item <?php echo $this->yieldContent('chatActive'); ?>" href="/chat">
  <ion-icon name="<?php echo $this->yieldContent('chatIcon', 'chatbubble-outline'); ?>"></ion-icon>
  <span class="site-navbar--item-title">Chat</span>
  </div>
- <div class="site-navbar--item <?php echo $this->yieldContent('notiActive'); ?>" goto="/notifications">
+ <div class="site-navbar--item <?php echo $this->yieldContent('notiActive'); ?>" href="/notifications">
  <ion-icon name="<?php echo $this->yieldContent('notiIcon', 'notifications-outline'); ?>"></ion-icon>
  <span class="site-navbar--item-title">Thông báo</span>
  </div>
- <div class="site-navbar--item <?php echo $this->yieldContent('menuActive'); ?>" goto="/menu">
+ <div class="site-navbar--item <?php echo $this->yieldContent('menuActive'); ?>" href="/menu">
  <ion-icon name="<?php echo $this->yieldContent('menuIcon', 'menu-outline'); ?>"></ion-icon>
  <span class="site-navbar--item-title">Menu</span>
  </div>

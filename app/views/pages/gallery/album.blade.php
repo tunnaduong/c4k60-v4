@@ -67,7 +67,7 @@
                 </div>
                 <div class="modal-body">
                     {{-- image here --}}
-                    <img id="modalImage" goto="" src="" style="width: 100%; height: auto;">
+                    <img id="modalImage" href="" src="" style="width: 100%; height: auto;">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="prevImage">{{ '<' }}</button>

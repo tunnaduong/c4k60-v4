@@ -74,26 +74,27 @@
             </button>
         </div>
         @if (isset($_SESSION['user']))
-            <div class="full-width user-greeting root-element" goto="/profile/{{ $_SESSION['user']->username }}">
+            <div class="full-width user-greeting root-element" href="/profile/{{ $_SESSION['user']->username }}">
                 <div class="user-greeting--avatar-wrapper">
                     <img src={{ $_SESSION['user']->avatar }} class="user-greeting--avatar" alt="Loggedin User Avatar">
                 </div>
                 <div class="user-greeting--greeting">
-                    <h5>Chào mừng, {{ $_SESSION['user']->name }}!</h5>
-                    <p id="loiChuc">Chúc bạn một ngày tốt lành và tràn đầy năng lượng.</p>
+                    <h5 class="cursor-pointer">Chào mừng, {{ $_SESSION['user']->name }}!</h5>
+                    <p class="cursor-pointer" id="loiChuc">Chúc bạn một ngày tốt lành và tràn đầy năng lượng.</p>
                 </div>
                 <div class="user-greeting--icon-wrapper">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                 </div>
             </div>
         @else
-            <div class="full-width user-greeting root-element" goto="/login">
+            <div class="full-width user-greeting root-element" href="/login">
                 <div class="user-greeting--avatar-wrapper">
                     <img src="/assets/images/user.png" class="user-greeting--avatar" alt="Unloggedin User Avatar">
                 </div>
                 <div class="user-greeting--greeting">
-                    <h5>Bạn chưa đăng nhập!</h5>
-                    <p>Hãy đăng nhập để trải nghiệm đầy đủ các tính năng tuyệt vời của trang web.</p>
+                    <h5 class="cursor-pointer">Bạn chưa đăng nhập!</h5>
+                    <p class="cursor-pointer">Hãy đăng nhập để trải nghiệm đầy đủ các tính năng tuyệt vời của trang web.
+                    </p>
                 </div>
                 <div class="user-greeting--icon-wrapper">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -101,37 +102,37 @@
             </div>
         @endif
         <div class="shortcuts full-width root-element grid-container">
-            <div class="shortcuts--button grid-item" goto="/gallery">
+            <div class="shortcuts--button grid-item" href="/gallery">
                 <div class="shortcuts--button-icon btn-photos">
                     <ion-icon name="images"></ion-icon>
                 </div>
                 <div class="shortcuts--button-title">Thư viện ảnh</div>
             </div>
-            <div class="shortcuts--button grid-item" goto="/birthdays">
+            <div class="shortcuts--button grid-item" href="/birthdays">
                 <div class="shortcuts--button-icon btn-birthdays">
                     <ion-icon name="gift"></ion-icon>
                 </div>
                 <div class="shortcuts--button-title">Sinh nhật sắp tới</div>
             </div>
-            <div class="shortcuts--button grid-item" goto="/profiles">
+            <div class="shortcuts--button grid-item" href="/profiles">
                 <div class="shortcuts--button-icon btn-profile">
                     <ion-icon name="people"></ion-icon>
                 </div>
                 <div class="shortcuts--button-title">Hồ sơ thành viên</div>
             </div>
-            <div class="shortcuts--button grid-item" goto="/friends-near-me">
+            <div class="shortcuts--button grid-item" href="/friends-near-me">
                 <div class="shortcuts--button-icon btn-near-here">
                     <ion-icon name="location"></ion-icon>
                 </div>
                 <div class="shortcuts--button-title">Bạn bè gần đây</div>
             </div>
-            <div class="shortcuts--button grid-item" goto="/listen-together">
+            <div class="shortcuts--button grid-item" href="/listen-together">
                 <div class="shortcuts--button-icon btn-listen">
                     <ion-icon name="musical-notes"></ion-icon>
                 </div>
                 <div class="shortcuts--button-title">Nghe nhạc cùng nhau</div>
             </div>
-            <div class="shortcuts--button grid-item" goto="/calendar">
+            <div class="shortcuts--button grid-item" href="/calendar">
                 <div class="shortcuts--button-icon btn-calendar">
                     <ion-icon name="calendar-number"></ion-icon>
                 </div>
@@ -142,7 +143,7 @@
             <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-between"><span
                     class="default-panel--title">Thông báo lớp</span>
                 <div style="display: flex;flex-direction:row;align-items:center;gap:5px;color: #717171"
-                    class="timeline--noti-title" goto="/notifications">
+                    class="timeline--noti-title" href="/notifications">
                     Xem tất cả
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
@@ -158,7 +159,7 @@
                                         {{ date('d/m/Y', strtotime($notification->date)) }}
                                     </span>
                                     <span class="timeline--noti-title link"
-                                        goto="/notifications/{{ $notification->id }}">{{ $notification->title }}</span>
+                                        href="/notifications/{{ $notification->id }}">{{ $notification->title }}</span>
                                 </div>
                             </li>
                         @endforeach
@@ -171,7 +172,7 @@
                     class="default-panel--title">Sinh nhật
                     sắp tới</span>
                 <div style="display: flex;flex-direction:row;align-items:center;gap:5px;color: #717171"
-                    class="timeline--noti-title" goto="/birthdays">
+                    class="timeline--noti-title" href="/birthdays">
                     Xem tất cả
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
@@ -188,7 +189,7 @@
             <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-between"><span
                     class="default-panel--title">Nhà tài trợ</span>
                 <div style="display: flex;flex-direction:row;align-items:center;gap:5px;color: #717171"
-                    class="timeline--noti-title" goto="/sponsors">
+                    class="timeline--noti-title" href="/sponsors">
                     Xem tất cả
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
@@ -202,7 +203,7 @@
                 @foreach ($donators as $donator)
                     <li class="timeline--noti-title" style="font-size: 15px">
                         <span @class(['link' => $donator->social_link != null])
-                            {{ $donator->social_link != null ? 'goto=' . $donator->social_link : '' }}>{{ $donator->name }}</span>
+                            {{ $donator->social_link != null ? 'href=' . $donator->social_link : '' }}>{{ $donator->name }}</span>
                         <span> - {{ $donator->amount }}</span>
                     </li>
                 @endforeach
@@ -212,7 +213,7 @@
             <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-between"><span
                     class="default-panel--title">Những thay đổi</span>
                 <div style="display: flex;flex-direction:row;align-items:center;gap:5px;color: #717171"
-                    class="timeline--noti-title" goto="/changelogs">
+                    class="timeline--noti-title" href="/changelogs">
                     Xem tất cả
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>

@@ -6,7 +6,7 @@
     <div style="display: flex;flex-direction: row;flex-wrap: wrap;gap: 10px;margin-right: -10px">
         @foreach ($albums as $album)
             <div class="w-[calc(50%-10px)] p-[10px] bg-white rounded-xl ripple shadow-md"
-                goto="/gallery/album/{{ $album->id }}">
+                href="/gallery/album/{{ $album->id }}">
                 <div class="relative pb-[70%]">
                     <img class="absolute h-full w-full object-cover" style="border-radius: 10px;"
                         src="{{ '/anhvavideo\/' . $album->bg_image }}">
