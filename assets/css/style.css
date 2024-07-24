@@ -407,8 +407,8 @@ body {
 
 #nprogress .bar {
   /* background: linear-gradient(to right, #ff3d6f, #f5e000) !important; */
-  background: #fff !important;
-  /* height: 5px !important; */
+  background: #000 !important;
+  height: 3.5px !important;
 }
 
 .site-navbar--white-bg {
