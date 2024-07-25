@@ -13,6 +13,10 @@
 
 <body>
     @if ($rel != 'page')
+        <!-- Preloader -->
+        <div id="preloader" class="preloader">
+            <img src="/assets/images/text-logo.png" alt="C4K60 Logo">
+        </div>
         @include('includes.menu')
         <div id="screen">
     @endif

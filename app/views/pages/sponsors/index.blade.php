@@ -30,7 +30,9 @@
         <li class="timeline--noti-title" style="font-size: 15px">PayPal: paypal.me/techup</li>
     </ol>
     <p class="timeline--noti-title" style="margin-bottom: 10px;font-size: 15px">Chủ tài khoản: Dương Tùng Anh</p>
-
+    <center>
+        <img src="/assets/images/qr-payment.jpg" width="200" alt="QR Payment">
+    </center>
     <p class="timeline--noti-title" style="font-size: 15px">Cảm ơn các bạn một lần nữa vì đã quan tâm và ủng hộ dự án này
         của mình! Nó có ý nghĩa về
         mặt tinh thần rất lớn đối
