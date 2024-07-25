@@ -203,7 +203,7 @@
                 @foreach ($donators as $donator)
                     <li class="timeline--noti-title" style="font-size: 15px">
                         <span @class(['link' => $donator->social_link != null])
-                            {{ $donator->social_link != null ? 'href=' . $donator->social_link : '' }}>{{ $donator->name }}</span>
+                            {{ $donator->social_link != null ? 'href=' . $donator->social_link : '' }} external>{{ $donator->name }}</span>
                         <span> - {{ $donator->amount }}</span>
                     </li>
                 @endforeach

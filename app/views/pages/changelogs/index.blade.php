@@ -28,7 +28,7 @@
         Dưới
         đây là món quà nhỏ
         của
-        mình: <a href="https://github.com/tunnaduong/c4k60-v4" class="link">Mã nguồn
+        mình: <a external href="https://github.com/tunnaduong/c4k60-v4" class="link">Mã nguồn
             C4K60</a><br>
         <div style="font-size: 12px;color:gray;margin-top:15px">Đây là một dự án mã nguồn mở, mọi người được phép tự chỉnh
             sửa trang web này

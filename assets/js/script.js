@@ -71,12 +71,12 @@ $(document).ajaxComplete(function () {
   loadAll();
 });
 
-// $("html").on("click", "[href]", function (e) {
-//   e.preventDefault(); // cancel click
-//   // add class cursor pointer
-//   var url = $(this).attr("href");
-//   window.location.href = url;
-// });
+$("html").on("click", "[external]", function (e) {
+  e.preventDefault(); // cancel click
+  // add class cursor pointer
+  var url = $(this).attr("href");
+  go(url);
+});
 
 function go(url) {
   window.location.href = url;
