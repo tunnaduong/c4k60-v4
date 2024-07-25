@@ -59,3 +59,5 @@
     <!-- Bộ mã Google Adsense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3425905751761094"
         crossorigin="anonymous"></script>
+    <!-- App Banner -->
+    <meta name="apple-itunes-app" content="app-id=6471649935">
