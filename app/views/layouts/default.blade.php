@@ -7,16 +7,20 @@
 @if ($rel != 'page')
 
     <head>
-        <title>@yield('title') - C4K60</title>
         @include('includes.head')
     </head>
 @endif
 
 <body>
     @if ($rel != 'page')
+        <!-- Preloader -->
+        <div id="preloader" class="preloader">
+            <img src="/assets/images/text-logo.png" alt="C4K60 Logo">
+        </div>
         @include('includes.menu')
         <div id="screen">
     @endif
+    <title>@yield('title') - C4K60</title>
     @yield('content')
     @if ($rel != 'page')
         </div>

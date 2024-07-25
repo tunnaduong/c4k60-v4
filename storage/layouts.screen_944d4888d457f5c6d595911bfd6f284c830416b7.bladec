@@ -7,7 +7,6 @@
 <?php if($rel != 'page'): ?>
 
  <head>
- <title><?php echo $this->yieldContent('title'); ?> - C4K60</title>
  <?php echo $this->runChild('includes.head'); ?>
  </head>
 <?php endif; ?>
@@ -24,6 +23,7 @@
  onclick="history.back()"></ion-icon>
  <span class="default-panel--title" style="flex: 1;text-align:center"><?php echo $this->yieldContent('title'); ?></span>
  </div>
+ <title><?php echo $this->yieldContent('title'); ?> - C4K60</title>
  <?php echo $this->yieldContent('content'); ?>
  </div>
  <?php if($rel != 'page'): ?>

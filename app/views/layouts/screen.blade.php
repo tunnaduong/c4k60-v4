@@ -7,7 +7,6 @@
 @if ($rel != 'page')
 
     <head>
-        <title>@yield('title') - C4K60</title>
         @include('includes.head')
     </head>
 @endif
@@ -24,6 +23,7 @@
                 onclick="history.back()"></ion-icon>
             <span class="default-panel--title" style="flex: 1;text-align:center">@yield('title')</span>
         </div>
+        <title>@yield('title') - C4K60</title>
         @yield('content')
     </div>
     @if ($rel != 'page')

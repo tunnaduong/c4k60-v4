@@ -1,6 +1,6 @@
 <?php $_shouldextend[1]=1; ?>
 
-<?php $this->startSection('title', 'Đăng nhập'); ?>
+<?php $this->startSection('title', 'Menu'); ?>
 
 <?php $this->startSection('content'); ?>
  <div id="root">

@@ -7,9 +7,18 @@ function initWaves() {
   Waves.init();
 }
 
+showLoading();
 NProgress.start();
 NProgress.configure({ showSpinner: false });
 $(document).ready(function () {
+  // Hide the preloader when the document is ready
+  $(window).on("load", function () {
+    $("#preloader").fadeOut("slow");
+  });
+
+  setTimeout(() => {
+    hideLoading();
+  }, 1000);
   initWaves();
   // loop and add class cursor pointer on [goto]
   $("[href]").addClass("cursor-pointer");
@@ -97,3 +106,30 @@ window.onpopstate = function () {
     },
   });
 };
+
+$(document).ready(function () {
+  $("html").on("click", ".site-navbar--item", function (e) {
+    e.preventDefault(); // cancel click
+
+    // Update the active state
+    $(".site-navbar--item").removeClass("active");
+    $(this).addClass("active");
+
+    // Update icons
+    $(".site-navbar--item ion-icon").each(function () {
+      var baseIcon = $(this).parent().data("icon");
+      $(this).attr("name", baseIcon + "-outline"); // Reset to outline
+    });
+
+    var activeIconBase = $(this).data("icon");
+    $(this).find("ion-icon").attr("name", activeIconBase); // Set to filled
+  });
+});
+
+function showLoading() {
+  $("#loading").show();
+}
+
+function hideLoading() {
+  $("#loading").hide();
+}

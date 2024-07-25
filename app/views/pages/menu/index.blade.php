@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Đăng nhập')
+@section('title', 'Menu')
 
 @section('content')
     <div id="root">

@@ -574,3 +574,39 @@ ul > li:before {
 .btn-hover:hover {
   background-color: #eeeeee;
 }
+
+/* Preloader overlay */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; /* Ensure it covers everything */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Semi-transparent white background */
+  display: flex; /* Center the spinner */
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader img {
+  height: 50px;
+  animation: zoom-in-zoom-out 1s ease infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

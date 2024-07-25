@@ -7,16 +7,20 @@
 <?php if($rel != 'page'): ?>
 
  <head>
- <title><?php echo $this->yieldContent('title'); ?> - C4K60</title>
  <?php echo $this->runChild('includes.head'); ?>
  </head>
 <?php endif; ?>
 
 <body>
  <?php if($rel != 'page'): ?>
+ <!-- Preloader -->
+ <div id="preloader" class="preloader">
+ <img src="/assets/images/text-logo.png" alt="C4K60 Logo">
+ </div>
  <?php echo $this->runChild('includes.menu'); ?>
  <div id="screen">
  <?php endif; ?>
+ <title><?php echo $this->yieldContent('title'); ?> - C4K60</title>
  <?php echo $this->yieldContent('content'); ?>
  <?php if($rel != 'page'): ?>
  </div>
