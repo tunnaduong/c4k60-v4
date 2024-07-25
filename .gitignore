@@ -1,5 +1,5 @@
 /.DS_Store
 /vendor/
 /env.php
-/assets/images/chats
-/storage
+/assets/images/chats/
+/storage/
