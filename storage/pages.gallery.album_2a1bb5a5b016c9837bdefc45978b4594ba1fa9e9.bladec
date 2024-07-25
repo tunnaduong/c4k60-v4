@@ -113,7 +113,7 @@
 
  function updateModalImage() {
  $('#modalImage').attr('src', images[currentImageIndex]);
- $('#modalImage').attr('goto', images[currentImageIndex]);
+ $('#modalImage').attr('href', images[currentImageIndex]);
  }
  });
  </script>

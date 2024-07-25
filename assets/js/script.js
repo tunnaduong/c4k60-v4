@@ -20,7 +20,7 @@ $(document).ready(function () {
     hideLoading();
   }, 1000);
   initWaves();
-  // loop and add class cursor pointer on [goto]
+  // loop and add class cursor pointer on [href]
   $("[href]").addClass("cursor-pointer");
   $("[onclick]").addClass("cursor-pointer");
   NProgress.done();
