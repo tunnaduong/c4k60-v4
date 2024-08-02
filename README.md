@@ -1,6 +1,7 @@
 # C4K60
 ## Giới thiệu
 Tên dự án: C4K60  
+Phiên bản: 4.0.6
 Mô tả ngắn gọn: Ứng dụng giao tiếp thông tin và giải trí dành riêng cho tập thể lớp 12 chuyên Nga khóa 60 trường THPT Chuyên Hà Nam  
 Tác giả: Dương Tùng Anh  
 ## Các tính năng chính
