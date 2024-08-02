@@ -1,5 +1,7 @@
 {
   "name": "tunnaduong/c4k60-v4",
+  "description": "Ứng dụng giải trí và giao tiếp nội bộ cho học sinh C4K60",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "App\\": "app/"
