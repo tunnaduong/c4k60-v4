@@ -27,6 +27,7 @@
         @include('includes.navbar')
         <script src="/assets/js/script.js"></script>
     @endif
+    @yield('modal')
 </body>
 
 </html>

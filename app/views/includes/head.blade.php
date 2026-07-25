@@ -44,6 +44,19 @@
     <!-- Bộ mã NProgress -->
     <script src='/assets/js/nprogress.js'></script>
     <link rel='stylesheet' href='/assets/css/nprogress.css' />
+    <!-- Thông tin người dùng đang đăng nhập (dùng cho các tính năng gọi API trực tiếp từ trình duyệt, vd: Bảng tin) -->
+    <script>
+        window.CURRENT_USER = @if (isset($_SESSION['user'])) {
+            username: @json($_SESSION['user']->username),
+            name: @json($_SESSION['user']->name),
+            avatar: @json($_SESSION['user']->avatar),
+        }
+        @else
+            null
+        @endif;
+    </script>
+    <!-- Bộ mã tính năng Bảng tin -->
+    <script src="/assets/js/feed.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZG381JXWG"></script>
     <script>
