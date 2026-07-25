@@ -138,6 +138,17 @@ class HomeController extends BaseController
         return $this->render("pages.notifications.index", compact("notifications"));
     }
 
+    public function notificationDetail($id)
+    {
+        $notification = $this->home->getNotificationById($id);
+
+        if (!$notification) {
+            return $this->error404();
+        }
+
+        return $this->render("pages.notifications.detail", compact("notification"));
+    }
+
     public function gallery()
     {
         $albums = $this->home->getAlbumsAll();
@@ -156,6 +167,100 @@ class HomeController extends BaseController
             $videos = $this->home->getVideosByAlbumID($albumID);
             return $this->render("pages.gallery.album", compact("videos", "albumName"));
         }
+    }
+
+    public function calendar()
+    {
+        $month = isset($_GET['month']) ? (int) $_GET['month'] : (int) date('n');
+        $year = isset($_GET['year']) ? (int) $_GET['year'] : (int) date('Y');
+
+        if ($month < 1) {
+            $month = 12;
+            $year--;
+        } elseif ($month > 12) {
+            $month = 1;
+            $year++;
+        }
+
+        $events = $this->home->getCalendarEvents();
+
+        // Nhóm sự kiện theo ngày (Y-m-d) để hiển thị chấm đánh dấu trên lịch
+        $eventDates = [];
+        foreach ($events as $event) {
+            $day = date('Y-m-d', strtotime($event->start));
+            $eventDates[$day][] = $event;
+        }
+
+        // Danh sách sự kiện sắp tới, tính từ hôm nay trở đi
+        $upcoming = array_filter($events, function ($event) {
+            return strtotime($event->start) >= strtotime('today');
+        });
+        usort($upcoming, function ($a, $b) {
+            return strtotime($a->start) <=> strtotime($b->start);
+        });
+        $upcoming = array_slice($upcoming, 0, 10);
+
+        // Xây dựng lưới các tuần trong tháng
+        $firstDayOfMonth = mktime(0, 0, 0, $month, 1, $year);
+        $daysInMonth = (int) date('t', $firstDayOfMonth);
+        $startWeekday = (int) date('w', $firstDayOfMonth);
+
+        $weeks = [];
+        $week = array_fill(0, $startWeekday, null);
+        for ($d = 1; $d <= $daysInMonth; $d++) {
+            $week[] = $d;
+            if (count($week) == 7) {
+                $weeks[] = $week;
+                $week = [];
+            }
+        }
+        if (count($week) > 0) {
+            $weeks[] = array_pad($week, 7, null);
+        }
+
+        $prevMonth = $month - 1;
+        $prevYear = $year;
+        if ($prevMonth < 1) {
+            $prevMonth = 12;
+            $prevYear--;
+        }
+
+        $nextMonth = $month + 1;
+        $nextYear = $year;
+        if ($nextMonth > 12) {
+            $nextMonth = 1;
+            $nextYear++;
+        }
+
+        $today = date('Y-m-d');
+
+        return $this->render("pages.calendar.index", compact(
+            "month",
+            "year",
+            "weeks",
+            "eventDates",
+            "upcoming",
+            "prevMonth",
+            "prevYear",
+            "nextMonth",
+            "nextYear",
+            "today"
+        ));
+    }
+
+    public function calendarDay($date)
+    {
+        $events = $this->home->getCalendarEvents();
+
+        $dayEvents = array_values(array_filter($events, function ($event) use ($date) {
+            return date('Y-m-d', strtotime($event->start)) == $date;
+        }));
+
+        usort($dayEvents, function ($a, $b) {
+            return strtotime($a->start) <=> strtotime($b->start);
+        });
+
+        return $this->render("pages.calendar.day", compact("date", "dayEvents"));
     }
 
     public function error404()

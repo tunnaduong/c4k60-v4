@@ -39,6 +39,13 @@ class Home extends BaseModel
         return $this->loadAllRows();
     }
 
+    public function getNotificationById($id)
+    {
+        $sql = "SELECT * FROM thongbaolop WHERE id = '$id'";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
+
     public function getAlbumsAll()
     {
         $sql = "SELECT * FROM album";
@@ -65,5 +72,12 @@ class Home extends BaseModel
         $sql = "SELECT * FROM album WHERE id = '$id'";
         $this->setQuery($sql);
         return $this->loadRow();
+    }
+
+    public function getCalendarEvents()
+    {
+        $sql = "SELECT * FROM calendar ORDER BY start ASC";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
     }
 }

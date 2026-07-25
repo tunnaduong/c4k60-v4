@@ -36,6 +36,12 @@ try {
 
     $router->get('/notifications', [App\Controllers\HomeController::class, 'notifications']);
 
+    $router->get('/notifications/{id}', [App\Controllers\HomeController::class, 'notificationDetail']);
+
+    $router->get('/calendar', [App\Controllers\HomeController::class, 'calendar']);
+
+    $router->get('/calendar/{date}', [App\Controllers\HomeController::class, 'calendarDay']);
+
     $router->get('/gallery', [App\Controllers\HomeController::class, 'gallery']);
 
     $router->get('/gallery/album/{albumID}', [App\Controllers\HomeController::class, 'album']);
