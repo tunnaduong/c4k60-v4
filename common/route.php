@@ -24,6 +24,8 @@ try {
 
     $router->get('/logout', [App\Controllers\AuthController::class, 'logout']);
 
+    $router->get('/profiles', [App\Controllers\UserController::class, 'index']);
+
     $router->get('/profile/{username}', [App\Controllers\UserController::class, 'getUserProfile']);
 
     $router->get('/changelogs', [App\Controllers\HomeController::class, 'changelogs']);

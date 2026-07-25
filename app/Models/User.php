@@ -11,6 +11,13 @@ class User extends BaseModel
         return $this->loadRow();
     }
 
+    public function getAllUsers()
+    {
+        $sql = "SELECT id, name, username, address, avatar, verified FROM c4_user ORDER BY name ASC";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
+
     public function getAllBirthdays()
     {
         $sql = "SELECT id, name, dayofbirth, monthofbirth, yearofbirth, gender, username, avatar FROM c4_user";

@@ -6,6 +6,13 @@ use App\Models\User;
 
 class UserController extends BaseController
 {
+    public function index()
+    {
+        $user = new User();
+        $members = $user->getAllUsers();
+        return $this->render("pages.user.index", compact("members"));
+    }
+
     public function getUserProfile($username)
     {
         $user = new User();
