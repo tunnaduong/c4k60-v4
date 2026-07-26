@@ -3,33 +3,35 @@
 @section('title', 'Bảng tin')
 
 @section('content')
-    <div style="display: flex;flex-direction: row;align-items: center;padding: 10px;background-color: white;border-bottom: 8px solid #E6E6E6;"
-        class="feed-composer">
-        @if (isset($_SESSION['user']))
-            <img src="{{ $_SESSION['user']->avatar }}"
-                style="width: 40px;height: 40px;border-radius: 25px;object-fit: cover;">
-        @else
-            <img src="/assets/images/notify.png" style="width: 40px;height: 40px;border-radius: 25px;object-fit: cover;">
-        @endif
-        <div class="ripple" data-bs-toggle="modal" data-bs-target="#createPostModal"
-            style="flex:1;border-radius: 10px;height: 40px;margin-right: 10px;margin-left: 5px;display:flex;align-items:center;background-color:#F6F6F6;padding-left:10px">
-            <span style="font-size: 16px;color:#8B8D95">Bạn đang nghĩ gì?</span>
+    <div id="root">
+        <div style="display: flex;flex-direction: row;align-items: center;padding: 10px;background-color: white;border-bottom: 8px solid #E6E6E6;width: calc(100% + 30px);margin-left: -15px;"
+            class="feed-composer">
+            @if (isset($_SESSION['user']))
+                <img src="{{ $_SESSION['user']->avatar }}"
+                    style="width: 40px;height: 40px;border-radius: 25px;object-fit: cover;">
+            @else
+                <img src="/assets/images/user.png" style="width: 40px;height: 40px;border-radius: 25px;object-fit: cover;">
+            @endif
+            <div class="ripple" data-bs-toggle="modal" data-bs-target="#createPostModal"
+                style="flex:1;border-radius: 10px;height: 40px;margin-right: 10px;margin-left: 5px;display:flex;align-items:center;background-color:#F6F6F6;padding-left:10px">
+                <span style="font-size: 16px;color:#8B8D95">Bạn đang nghĩ gì?</span>
+            </div>
+            <div class="btn-hover" style="padding:6px;border-radius:8px" id="feed-pick-image-btn">
+                <ion-icon name="images" style="font-size: 22px;color:#36BF2D"></ion-icon>
+            </div>
+            <input type="file" id="feed-pick-image-input" accept="image/*" style="display:none">
         </div>
-        <div class="btn-hover" style="padding:6px;border-radius:8px" id="feed-pick-image-btn">
-            <ion-icon name="images" style="font-size: 22px;color:#36BF2D"></ion-icon>
+
+        <div id="feed-list" style="width: calc(100% + 30px);margin-left: -15px;"></div>
+
+        <div id="feed-empty" style="display:none;text-align:center;padding:60px 20px;color:#8B8D95">
+            Chưa có bài viết nào trong bảng tin.
         </div>
-        <input type="file" id="feed-pick-image-input" accept="image/*" style="display:none">
-    </div>
 
-    <div id="feed-list"></div>
-
-    <div id="feed-empty" style="display:none;text-align:center;padding:60px 20px;color:#8B8D95">
-        Chưa có bài viết nào trong bảng tin.
-    </div>
-
-    <div id="feed-loader" style="text-align:center;padding:25px">
-        <div class="spinner-border" style="width:2rem;height:2rem;color:#636568" role="status"></div>
-        <div style="margin-top:10px;color:#636568">Đang tải bảng tin...</div>
+        <div id="feed-loader" style="text-align:center;padding:25px">
+            <div class="spinner-border" style="width:2rem;height:2rem;color:#636568" role="status"></div>
+            <div style="margin-top:10px;color:#636568">Đang tải bảng tin...</div>
+        </div>
     </div>
 @endsection
 

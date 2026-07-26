@@ -24,7 +24,7 @@
   }
 
   function avatarOr(url) {
-    return url ? url : "/assets/images/notify.png";
+    return url ? url : "/assets/images/user.png";
   }
 
   function isLikedByCurrentUser(post) {
@@ -152,6 +152,10 @@
     return html;
   }
 
+  function toggleCommentImagePreview(visible) {
+    $("#feed-comment-image-preview-wrap").css("display", visible ? "flex" : "none");
+  }
+
   function showNavbar(visible) {
     // Bảng điều hướng dưới cùng được render SAU nội dung trang trong HTML (ở full page
     // load), nên phải đợi nó tồn tại trong DOM trước khi ẩn/hiện.
@@ -189,17 +193,19 @@
 
     bindCreatePostModal();
 
-    $(window).off("scroll.feed").on("scroll.feed", onFeedScroll);
+    // Vùng cuộn thực sự của app là #root (overflow-y:auto), không phải window.
+    $("#root").off("scroll.feed").on("scroll.feed", onFeedScroll);
 
     loadFeedPage(true);
   };
 
   function onFeedScroll() {
     if (!indexState || !indexState.hasMore || indexState.loading) return;
-    var scrollTop = $(window).scrollTop();
-    var winHeight = $(window).height();
-    var docHeight = $(document).height();
-    if (scrollTop + winHeight >= docHeight - 300) {
+    var $root = $("#root");
+    var scrollTop = $root.scrollTop();
+    var rootHeight = $root.innerHeight();
+    var scrollHeight = $root[0] ? $root[0].scrollHeight : 0;
+    if (scrollTop + rootHeight >= scrollHeight - 300) {
       indexState.page += 1;
       loadFeedPage(false);
     }
@@ -562,7 +568,7 @@
     $("#feed-detail-loader").show();
     $("#feed-detail-notfound").hide();
     $("#feed-detail-content").hide().empty();
-    $("#feed-comment-image-preview-wrap").hide();
+    toggleCommentImagePreview(false);
     $("#feed-comment-input").val("");
 
     fetchPostById(postId, function (post) {
@@ -603,7 +609,7 @@
         var reader = new FileReader();
         reader.onload = function (ev) {
           $("#feed-comment-image-preview").attr("src", ev.target.result);
-          $("#feed-comment-image-preview-wrap").show();
+          toggleCommentImagePreview(true);
         };
         reader.readAsDataURL(file);
         $("#feed-comment-input").focus();
@@ -614,7 +620,7 @@
       .on("click", function () {
         detailState.commentImageFile = null;
         $("#feed-comment-image-input").val("");
-        $("#feed-comment-image-preview-wrap").hide();
+        toggleCommentImagePreview(false);
       });
 
     $("#feed-comment-send-btn").off("click").on("click", submitComment);
@@ -688,7 +694,7 @@
     var previewSrc = file ? $("#feed-comment-image-preview").attr("src") : null;
 
     $("#feed-comment-input").val("");
-    $("#feed-comment-image-preview-wrap").hide();
+    toggleCommentImagePreview(false);
     detailState.commentImageFile = null;
     $("#feed-comment-image-input").val("");
 
